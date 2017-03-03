@@ -95,6 +95,7 @@
 				TargetAttributes = {
 					5F2035D51E68F6530035BDF0 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 62P67T8LU2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -257,6 +258,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 62P67T8LU2;
 				INFOPLIST_FILE = "Three Eyed Raven/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "world.threeeyedraven.Three-Eyed-Raven";
@@ -269,6 +271,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 62P67T8LU2;
 				INFOPLIST_FILE = "Three Eyed Raven/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "world.threeeyedraven.Three-Eyed-Raven";
