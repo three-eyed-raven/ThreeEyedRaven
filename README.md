@@ -22,6 +22,9 @@ Non-Functional user stories:
 - [ ] As a user, I would like to view character sentiment during a specific episode.
 - [ ] As a user, I would like to select what episode I am currently viewing to avoid spoilers about the show
 
+## Wireframe
+The wireframe can be found [here](Wireframe/wireframe.jpg).
+
 
 ## License
 
