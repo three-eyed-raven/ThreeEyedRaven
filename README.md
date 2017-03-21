@@ -9,6 +9,7 @@
 - [User Stories](Documents/UserStories.md)
 - [Wireframes](Wireframe/wireframe.jpg)
 - [API Endpoints](Documents/Endpoints.md)
+- [Models](Documents/Models.md)
 
 ## License
 
