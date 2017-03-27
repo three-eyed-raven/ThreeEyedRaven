@@ -11,7 +11,6 @@ import UIKit
 class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchButton: UIBarButtonItem!
     
     let searchBar = UISearchBar()
     
@@ -22,7 +21,6 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.dataSource = self
         searchBar.delegate = self
         
-        //searchBar.becomeFirstResponder()
         self.navigationItem.titleView = searchBar
 
 
@@ -37,16 +35,16 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell") as! CharacterCell
         return cell
     }
-    @IBAction func onSearchButtonPressed(_ sender: Any) {
-        self.navigationItem.rightBarButtonItem = nil
+    public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.tintColor = UIColor.black
         searchBar.showsCancelButton = true
     }
+   
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
         searchBar.text = ""
         searchBar.resignFirstResponder()
-        self.navigationItem.rightBarButtonItem = self.searchButton
     }
     
     
