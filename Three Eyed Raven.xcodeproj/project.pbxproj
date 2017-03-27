@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2035D91E68F6530035BDF0 /* AppDelegate.swift */; };
-		5F2035DC1E68F6530035BDF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2035DB1E68F6530035BDF0 /* ViewController.swift */; };
 		5F2035DF1E68F6530035BDF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2035DD1E68F6530035BDF0 /* Main.storyboard */; };
 		5F2035E11E68F6530035BDF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2035E01E68F6530035BDF0 /* Assets.xcassets */; };
 		5F2035E41E68F6530035BDF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2035E21E68F6530035BDF0 /* LaunchScreen.storyboard */; };
+		5FB100951E898B3800EC988F /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB100941E898B3800EC988F /* CharactersViewController.swift */; };
+		5FB100971E898BFB00EC988F /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB100961E898BFB00EC988F /* CharacterCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5F2035D61E68F6530035BDF0 /* Three Eyed Raven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Three Eyed Raven.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2035D91E68F6530035BDF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5F2035DB1E68F6530035BDF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5F2035DE1E68F6530035BDF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F2035E01E68F6530035BDF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F2035E31E68F6530035BDF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F2035E51E68F6530035BDF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FB100941E898B3800EC988F /* CharactersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
+		5FB100961E898BFB00EC988F /* CharacterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		5F2035D81E68F6530035BDF0 /* Three Eyed Raven */ = {
 			isa = PBXGroup;
 			children = (
+				5FB100981E898C0C00EC988F /* View Controllers */,
 				5F2035D91E68F6530035BDF0 /* AppDelegate.swift */,
-				5F2035DB1E68F6530035BDF0 /* ViewController.swift */,
 				5F2035DD1E68F6530035BDF0 /* Main.storyboard */,
+				5FB100961E898BFB00EC988F /* CharacterCell.swift */,
 				5F2035E01E68F6530035BDF0 /* Assets.xcassets */,
 				5F2035E21E68F6530035BDF0 /* LaunchScreen.storyboard */,
 				5F2035E51E68F6530035BDF0 /* Info.plist */,
 			);
 			path = "Three Eyed Raven";
+			sourceTree = "<group>";
+		};
+		5FB100981E898C0C00EC988F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5FB100941E898B3800EC988F /* CharactersViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F2035DC1E68F6530035BDF0 /* ViewController.swift in Sources */,
 				5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */,
+				5FB100951E898B3800EC988F /* CharactersViewController.swift in Sources */,
+				5FB100971E898BFB00EC988F /* CharacterCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +311,7 @@
 				5F2035EA1E68F6530035BDF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
