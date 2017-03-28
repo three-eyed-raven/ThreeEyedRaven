@@ -20,7 +20,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
-        
+        tabBar.tintColor = UIColor.darkGray
         self.navigationItem.titleView = searchBar
         
     }
