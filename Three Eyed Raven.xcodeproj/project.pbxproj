@@ -7,23 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26302C0F1E8B1F6A00AB7506 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26302C0E1E8B1F6A00AB7506 /* UIColorExtension.swift */; };
 		5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2035D91E68F6530035BDF0 /* AppDelegate.swift */; };
-		5F2035DF1E68F6530035BDF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2035DD1E68F6530035BDF0 /* Main.storyboard */; };
+		5F2035DF1E68F6530035BDF0 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2035DD1E68F6530035BDF0 /* Characters.storyboard */; };
 		5F2035E11E68F6530035BDF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2035E01E68F6530035BDF0 /* Assets.xcassets */; };
 		5F2035E41E68F6530035BDF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2035E21E68F6530035BDF0 /* LaunchScreen.storyboard */; };
 		5FB100951E898B3800EC988F /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB100941E898B3800EC988F /* CharactersViewController.swift */; };
 		5FB100971E898BFB00EC988F /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB100961E898BFB00EC988F /* CharacterCell.swift */; };
+		5FB1009A1E8AE93700EC988F /* Houses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB100991E8AE93700EC988F /* Houses.storyboard */; };
+		5FB1009E1E8AE9B100EC988F /* HousesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1009D1E8AE9B100EC988F /* HousesViewController.swift */; };
+		5FB100A01E8AF3EF00EC988F /* HouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1009F1E8AF3EF00EC988F /* HouseCell.swift */; };
+		5FB100A21E8AFF9200EC988F /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB100A11E8AFF9200EC988F /* TabBar.storyboard */; };
+		9D2F75E01720864BB15D9D11 /* Pods_Three_Eyed_Raven.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35F309208DC21EA296E2243 /* Pods_Three_Eyed_Raven.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26302C0E1E8B1F6A00AB7506 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		5F2035D61E68F6530035BDF0 /* Three Eyed Raven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Three Eyed Raven.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2035D91E68F6530035BDF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5F2035DE1E68F6530035BDF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5F2035DE1E68F6530035BDF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Characters.storyboard; sourceTree = "<group>"; };
 		5F2035E01E68F6530035BDF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F2035E31E68F6530035BDF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F2035E51E68F6530035BDF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FB100941E898B3800EC988F /* CharactersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		5FB100961E898BFB00EC988F /* CharacterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		5FB100991E8AE93700EC988F /* Houses.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Houses.storyboard; sourceTree = "<group>"; };
+		5FB1009D1E8AE9B100EC988F /* HousesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousesViewController.swift; sourceTree = "<group>"; };
+		5FB1009F1E8AF3EF00EC988F /* HouseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseCell.swift; sourceTree = "<group>"; };
+		5FB100A11E8AFF9200EC988F /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		853049AF3EB486BA6191EA1F /* Pods-Three Eyed Raven.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Three Eyed Raven.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Three Eyed Raven/Pods-Three Eyed Raven.debug.xcconfig"; sourceTree = "<group>"; };
+		B35F309208DC21EA296E2243 /* Pods_Three_Eyed_Raven.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Three_Eyed_Raven.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7E6CF86B619F53F47A6DF1A /* Pods-Three Eyed Raven.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Three Eyed Raven.release.xcconfig"; path = "Pods/Target Support Files/Pods-Three Eyed Raven/Pods-Three Eyed Raven.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D2F75E01720864BB15D9D11 /* Pods_Three_Eyed_Raven.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16C6708EF0D5B1DB45F1A964 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B35F309208DC21EA296E2243 /* Pods_Three_Eyed_Raven.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F3D0C685A496AC709E57556 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				853049AF3EB486BA6191EA1F /* Pods-Three Eyed Raven.debug.xcconfig */,
+				B7E6CF86B619F53F47A6DF1A /* Pods-Three Eyed Raven.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		26302C0D1E8B1F5B00AB7506 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				26302C0E1E8B1F6A00AB7506 /* UIColorExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		5F2035CD1E68F6530035BDF0 = {
 			isa = PBXGroup;
 			children = (
 				5F2035D81E68F6530035BDF0 /* Three Eyed Raven */,
 				5F2035D71E68F6530035BDF0 /* Products */,
+				1F3D0C685A496AC709E57556 /* Pods */,
+				16C6708EF0D5B1DB45F1A964 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,10 +98,12 @@
 		5F2035D81E68F6530035BDF0 /* Three Eyed Raven */ = {
 			isa = PBXGroup;
 			children = (
+				26302C0D1E8B1F5B00AB7506 /* Extensions */,
+				5FB1009B1E8AE95000EC988F /* Storyboards */,
 				5FB100981E898C0C00EC988F /* View Controllers */,
-				5F2035D91E68F6530035BDF0 /* AppDelegate.swift */,
-				5F2035DD1E68F6530035BDF0 /* Main.storyboard */,
 				5FB100961E898BFB00EC988F /* CharacterCell.swift */,
+				5FB1009F1E8AF3EF00EC988F /* HouseCell.swift */,
+				5F2035D91E68F6530035BDF0 /* AppDelegate.swift */,
 				5F2035E01E68F6530035BDF0 /* Assets.xcassets */,
 				5F2035E21E68F6530035BDF0 /* LaunchScreen.storyboard */,
 				5F2035E51E68F6530035BDF0 /* Info.plist */,
@@ -71,8 +115,19 @@
 			isa = PBXGroup;
 			children = (
 				5FB100941E898B3800EC988F /* CharactersViewController.swift */,
+				5FB1009D1E8AE9B100EC988F /* HousesViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5FB1009B1E8AE95000EC988F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5F2035DD1E68F6530035BDF0 /* Characters.storyboard */,
+				5FB100991E8AE93700EC988F /* Houses.storyboard */,
+				5FB100A11E8AFF9200EC988F /* TabBar.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,9 +137,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F2035E81E68F6530035BDF0 /* Build configuration list for PBXNativeTarget "Three Eyed Raven" */;
 			buildPhases = (
+				3C6EFAF1687F70441D6EB1E9 /* [CP] Check Pods Manifest.lock */,
 				5F2035D21E68F6530035BDF0 /* Sources */,
 				5F2035D31E68F6530035BDF0 /* Frameworks */,
 				5F2035D41E68F6530035BDF0 /* Resources */,
+				252D5FB90A2F6ADF6730ECC2 /* [CP] Embed Pods Frameworks */,
+				909EBC623529A5C01F672D2D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -106,7 +164,7 @@
 				TargetAttributes = {
 					5F2035D51E68F6530035BDF0 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 62P67T8LU2;
+						DevelopmentTeam = 2S3D8J8M3T;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -135,33 +193,86 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F2035E41E68F6530035BDF0 /* LaunchScreen.storyboard in Resources */,
+				5FB1009A1E8AE93700EC988F /* Houses.storyboard in Resources */,
 				5F2035E11E68F6530035BDF0 /* Assets.xcassets in Resources */,
-				5F2035DF1E68F6530035BDF0 /* Main.storyboard in Resources */,
+				5F2035DF1E68F6530035BDF0 /* Characters.storyboard in Resources */,
+				5FB100A21E8AFF9200EC988F /* TabBar.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		252D5FB90A2F6ADF6730ECC2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Three Eyed Raven/Pods-Three Eyed Raven-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C6EFAF1687F70441D6EB1E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		909EBC623529A5C01F672D2D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Three Eyed Raven/Pods-Three Eyed Raven-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5F2035D21E68F6530035BDF0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26302C0F1E8B1F6A00AB7506 /* UIColorExtension.swift in Sources */,
 				5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */,
 				5FB100951E898B3800EC988F /* CharactersViewController.swift in Sources */,
 				5FB100971E898BFB00EC988F /* CharacterCell.swift in Sources */,
+				5FB100A01E8AF3EF00EC988F /* HouseCell.swift in Sources */,
+				5FB1009E1E8AE9B100EC988F /* HousesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5F2035DD1E68F6530035BDF0 /* Main.storyboard */ = {
+		5F2035DD1E68F6530035BDF0 /* Characters.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5F2035DE1E68F6530035BDF0 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Characters.storyboard;
 			sourceTree = "<group>";
 		};
 		5F2035E21E68F6530035BDF0 /* LaunchScreen.storyboard */ = {
@@ -268,9 +379,10 @@
 		};
 		5F2035E91E68F6530035BDF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 853049AF3EB486BA6191EA1F /* Pods-Three Eyed Raven.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 62P67T8LU2;
+				DEVELOPMENT_TEAM = 2S3D8J8M3T;
 				INFOPLIST_FILE = "Three Eyed Raven/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "world.threeeyedraven.Three-Eyed-Raven";
@@ -281,9 +393,10 @@
 		};
 		5F2035EA1E68F6530035BDF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7E6CF86B619F53F47A6DF1A /* Pods-Three Eyed Raven.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 62P67T8LU2;
+				DEVELOPMENT_TEAM = 2S3D8J8M3T;
 				INFOPLIST_FILE = "Three Eyed Raven/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "world.threeeyedraven.Three-Eyed-Raven";

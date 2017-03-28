@@ -1,39 +1,42 @@
 //
-//  CharactersViewController.swift
+//  HousesViewController.swift
 //  Three Eyed Raven
 //
-//  Created by Fiona Thompson on 3/27/17.
+//  Created by Fiona Thompson on 3/28/17.
 //
 //
 
 import UIKit
 
-class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class HousesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    @IBOutlet weak var tableView: UITableView!
-    
-    let searchBar = UISearchBar()
+    @IBOutlet weak var collectionView: UICollectionView!
+     let searchBar = UISearchBar()
     let tabBar = UITabBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
         searchBar.delegate = self
-        tabBar.tintColor = UIColor.darkGray
         self.navigationItem.titleView = searchBar
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        self.collectionView.alwaysBounceVertical = true
+
         
+        // Do any additional setup after loading the view.
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        return 4
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell") as! CharacterCell
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HouseCell", for: indexPath) as! HouseCell
         return cell
     }
     
+    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,13 +55,12 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
 
 }
 
-extension CharactersViewController: UISearchBarDelegate {
+extension HousesViewController: UISearchBarDelegate {
     
     public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.tintColor = UIColor.gold
         searchBar.showsCancelButton = true
         searchBar.keyboardAppearance = .dark
-
     }
     
     

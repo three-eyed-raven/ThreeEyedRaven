@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Houses View Controller-->
+        <scene sceneID="gG7-ju-HIE">
+            <objects>
+                <viewController id="CnM-kx-iEI" customClass="HousesViewController" customModule="Three_Eyed_Raven" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IVk-fu-9Ab"/>
+                        <viewControllerLayoutGuide type="bottom" id="sfQ-yi-Gdt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tnb-2Q-MTA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ggI-gg-j5I">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Im-Td-IgJ">
+                                    <size key="itemSize" width="179" height="227"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HouseCell" id="VIr-h4-uj2" customClass="HouseCell" customModule="Three_Eyed_Raven" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="179" height="227"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="179" height="227"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House Lannister" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqk-yc-Hk3">
+                                                    <rect key="frame" x="27" y="186" width="125" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TER Icon" translatesAutoresizingMaskIntoConstraints="NO" id="VRG-Hf-3GC">
+                                                    <rect key="frame" x="8" y="8" width="163" height="170"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="163" id="1K6-ce-NlL"/>
+                                                        <constraint firstAttribute="height" constant="170" id="qxi-NY-5sp"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Zqk-yc-Hk3" firstAttribute="centerX" secondItem="VIr-h4-uj2" secondAttribute="centerX" id="HF6-8X-Yld"/>
+                                            <constraint firstItem="Zqk-yc-Hk3" firstAttribute="top" secondItem="VRG-Hf-3GC" secondAttribute="bottom" constant="8" id="KhN-ie-QcG"/>
+                                            <constraint firstItem="VRG-Hf-3GC" firstAttribute="leading" secondItem="VIr-h4-uj2" secondAttribute="leading" constant="8" id="RGs-CS-xKm"/>
+                                            <constraint firstItem="VRG-Hf-3GC" firstAttribute="top" secondItem="VIr-h4-uj2" secondAttribute="top" constant="8" id="eDw-jY-h5W"/>
+                                            <constraint firstAttribute="trailing" secondItem="VRG-Hf-3GC" secondAttribute="trailing" constant="8" id="gkn-NS-teu"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="houseImageView" destination="VRG-Hf-3GC" id="uNd-gx-GKV"/>
+                                            <outlet property="houseNameLabel" destination="Zqk-yc-Hk3" id="bag-Xf-2XM"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ggI-gg-j5I" firstAttribute="top" secondItem="tnb-2Q-MTA" secondAttribute="top" id="7a7-6f-V7m"/>
+                            <constraint firstItem="sfQ-yi-Gdt" firstAttribute="top" secondItem="ggI-gg-j5I" secondAttribute="bottom" id="ftx-bm-ROq"/>
+                            <constraint firstAttribute="trailing" secondItem="ggI-gg-j5I" secondAttribute="trailing" id="oge-kf-h5c"/>
+                            <constraint firstItem="ggI-gg-j5I" firstAttribute="leading" secondItem="tnb-2Q-MTA" secondAttribute="leading" id="qan-XX-Ym1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BIR-xU-jUS"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ggI-gg-j5I" id="hmC-il-A3b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfm-8B-Vyo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704.79999999999995" y="-271.21439280359823"/>
+        </scene>
+        <!--Houses-->
+        <scene sceneID="QKT-M7-MN8">
+            <objects>
+                <navigationController storyboardIdentifier="HousesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="UR9-Es-rzu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Houses" image="Castle" id="ezY-Fy-K5H"/>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="KUa-g9-CHl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CnM-kx-iEI" kind="relationship" relationship="rootViewController" id="7ND-Gb-nYi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j89-Ff-Iks" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="705" y="-994"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Castle" width="27" height="28"/>
+        <image name="TER Icon" width="289" height="289"/>
+    </resources>
+</document>
