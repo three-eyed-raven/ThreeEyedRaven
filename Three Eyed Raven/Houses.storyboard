@@ -38,19 +38,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="179" height="227"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="House Lannister" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqk-yc-Hk3">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House Lannister" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqk-yc-Hk3">
                                                     <rect key="frame" x="27" y="186" width="125" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TER Icon" translatesAutoresizingMaskIntoConstraints="NO" id="VRG-Hf-3GC">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TER Icon" translatesAutoresizingMaskIntoConstraints="NO" id="VRG-Hf-3GC">
                                                     <rect key="frame" x="8" y="8" width="163" height="170"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="163" id="1K6-ce-NlL"/>
+                                                        <constraint firstAttribute="height" constant="170" id="qxi-NY-5sp"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="Zqk-yc-Hk3" firstAttribute="centerX" secondItem="VIr-h4-uj2" secondAttribute="centerX" id="HF6-8X-Yld"/>
+                                            <constraint firstItem="Zqk-yc-Hk3" firstAttribute="top" secondItem="VRG-Hf-3GC" secondAttribute="bottom" constant="8" id="KhN-ie-QcG"/>
+                                            <constraint firstItem="VRG-Hf-3GC" firstAttribute="leading" secondItem="VIr-h4-uj2" secondAttribute="leading" constant="8" id="RGs-CS-xKm"/>
+                                            <constraint firstItem="VRG-Hf-3GC" firstAttribute="top" secondItem="VIr-h4-uj2" secondAttribute="top" constant="8" id="eDw-jY-h5W"/>
+                                            <constraint firstAttribute="trailing" secondItem="VRG-Hf-3GC" secondAttribute="trailing" constant="8" id="gkn-NS-teu"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="houseImageView" destination="VRG-Hf-3GC" id="uNd-gx-GKV"/>
                                             <outlet property="houseNameLabel" destination="Zqk-yc-Hk3" id="bag-Xf-2XM"/>
@@ -82,7 +91,8 @@
                 <navigationController storyboardIdentifier="HousesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="UR9-Es-rzu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Houses" image="Castle" id="ezY-Fy-K5H"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KUa-g9-CHl">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="KUa-g9-CHl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
