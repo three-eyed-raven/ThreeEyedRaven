@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UITabBarDelegate{
+class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,13 +21,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.dataSource = self
         searchBar.delegate = self
         
-        tabBar.delegate = self
-        self.tabBar.barTintColor = UIColor.black
-        
         self.navigationItem.titleView = searchBar
-
-
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,20 +32,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell") as! CharacterCell
         return cell
     }
-    public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchBar.tintColor = UIColor.black
-        searchBar.showsCancelButton = true
-    }
-   
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.showsCancelButton = false
-        searchBar.text = ""
-        searchBar.resignFirstResponder()
-    }
-    
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -68,4 +49,19 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     */
 
+}
+
+extension CharactersViewController: UISearchBarDelegate {
+    
+    public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.tintColor = UIColor.black
+        searchBar.showsCancelButton = true
+    }
+    
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+    }
 }
