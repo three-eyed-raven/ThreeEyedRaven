@@ -8,18 +8,21 @@
 
 import UIKit
 
-class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UITabBarDelegate{
 
     @IBOutlet weak var tableView: UITableView!
     
     let searchBar = UISearchBar()
-    
+    let tabBar = UITabBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        
+        tabBar.delegate = self
+        self.tabBar.barTintColor = UIColor.black
         
         self.navigationItem.titleView = searchBar
 
