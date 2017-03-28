@@ -12,6 +12,7 @@ class HousesViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     @IBOutlet weak var collectionView: UICollectionView!
      let searchBar = UISearchBar()
+    let tabBar = UITabBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class HousesViewController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView.delegate = self
         collectionView.dataSource = self
         self.collectionView.alwaysBounceVertical = true
+
         
         // Do any additional setup after loading the view.
     }

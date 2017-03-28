@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="njl-di-gDZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -45,7 +45,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Description Description Description Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBN-zC-q01">
-                                                    <rect key="frame" x="8" y="57" width="251" height="58"/>
+                                                    <rect key="frame" x="8" y="57" width="251" height="57.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -103,7 +103,7 @@
         <!--Characters-->
         <scene sceneID="lfs-M5-vXS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u2J-a9-eTY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CharactersNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="u2J-a9-eTY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Characters" image="Character" id="nco-IW-7FI"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -125,27 +125,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qmz-Tg-l74" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1761" y="54"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="LMb-ky-aIJ">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="njl-di-gDZ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="3tE-5i-iLF">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="u2J-a9-eTY" kind="relationship" relationship="viewControllers" id="uPU-aq-P1g"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Eir-rs-E1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1761" y="-676"/>
         </scene>
     </scenes>
     <resources>

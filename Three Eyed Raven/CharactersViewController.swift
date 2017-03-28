@@ -22,6 +22,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         searchBar.delegate = self
         
         self.navigationItem.titleView = searchBar
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
