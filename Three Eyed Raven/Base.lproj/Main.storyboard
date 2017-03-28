@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="njl-di-gDZ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Characters View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CharactersViewController" customModule="Three_Eyed_Raven" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,136 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iIw-BV-IYO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CharacterCell" rowHeight="135" id="rVx-sb-ukJ" customClass="CharacterCell" customModule="Three_Eyed_Raven" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="135"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rVx-sb-ukJ" id="6Vi-Ox-VSp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="134"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joffrey Baratheon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJO-nr-QQA">
+                                                    <rect key="frame" x="8" y="8" width="144" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House Lannister" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bb-sL-loP">
+                                                    <rect key="frame" x="8" y="33" width="118" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Description Description Description Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBN-zC-q01">
+                                                    <rect key="frame" x="8" y="57" width="251" height="58"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TER Icon" translatesAutoresizingMaskIntoConstraints="NO" id="2Tn-z0-daO">
+                                                    <rect key="frame" x="267" y="17" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="R0G-QJ-IXi"/>
+                                                        <constraint firstAttribute="width" constant="100" id="cbt-Z5-Ioj"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2Tn-z0-daO" firstAttribute="leading" secondItem="jBN-zC-q01" secondAttribute="trailing" constant="8" id="Bjz-Zp-gWM"/>
+                                                <constraint firstItem="2Tn-z0-daO" firstAttribute="top" secondItem="6Vi-Ox-VSp" secondAttribute="top" constant="17" id="Fm4-tu-a2Q"/>
+                                                <constraint firstItem="jBN-zC-q01" firstAttribute="leading" secondItem="6Vi-Ox-VSp" secondAttribute="leading" constant="8" id="Iev-hf-ORh"/>
+                                                <constraint firstItem="2Tn-z0-daO" firstAttribute="leading" relation="lessThanOrEqual" secondItem="FJO-nr-QQA" secondAttribute="trailing" constant="115" id="WHy-Wz-YeK"/>
+                                                <constraint firstItem="5bb-sL-loP" firstAttribute="leading" secondItem="6Vi-Ox-VSp" secondAttribute="leading" constant="8" id="WY3-o4-fB1"/>
+                                                <constraint firstItem="FJO-nr-QQA" firstAttribute="leading" secondItem="6Vi-Ox-VSp" secondAttribute="leading" constant="8" id="gvc-cn-qGn"/>
+                                                <constraint firstItem="jBN-zC-q01" firstAttribute="top" secondItem="5bb-sL-loP" secondAttribute="bottom" constant="4" id="jan-1u-sS2"/>
+                                                <constraint firstItem="5bb-sL-loP" firstAttribute="top" secondItem="FJO-nr-QQA" secondAttribute="bottom" constant="4" id="m3w-zY-y2A"/>
+                                                <constraint firstAttribute="trailing" secondItem="2Tn-z0-daO" secondAttribute="trailing" constant="8" id="teh-lA-GCk"/>
+                                                <constraint firstItem="FJO-nr-QQA" firstAttribute="top" secondItem="6Vi-Ox-VSp" secondAttribute="top" constant="8" id="xvU-Oz-uLU"/>
+                                                <constraint firstAttribute="bottom" secondItem="2Tn-z0-daO" secondAttribute="bottom" constant="17" id="y7c-XN-tMW"/>
+                                                <constraint firstItem="2Tn-z0-daO" firstAttribute="centerY" secondItem="6Vi-Ox-VSp" secondAttribute="centerY" id="zIm-Ae-vjv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="characterDescriptionLabel" destination="jBN-zC-q01" id="kxp-Rz-Ive"/>
+                                            <outlet property="characterHouseLabel" destination="5bb-sL-loP" id="fRu-Pl-TtA"/>
+                                            <outlet property="characterImageView" destination="2Tn-z0-daO" id="ywn-UW-aH5"/>
+                                            <outlet property="characterNameLabel" destination="FJO-nr-QQA" id="qfK-CS-1lI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iIw-BV-IYO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="JRO-14-Pnv"/>
+                            <constraint firstItem="iIw-BV-IYO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YV3-ZH-F2P"/>
+                            <constraint firstAttribute="trailing" secondItem="iIw-BV-IYO" secondAttribute="trailing" id="t6g-vB-HAt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iIw-BV-IYO" secondAttribute="bottom" id="w0H-M4-DA0"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="w8i-KQ-w6w"/>
+                    <connections>
+                        <outlet property="tableView" destination="iIw-BV-IYO" id="INI-hI-39k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1760.8" y="812.74362818590714"/>
+        </scene>
+        <!--Characters-->
+        <scene sceneID="lfs-M5-vXS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u2J-a9-eTY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Characters" image="Character" id="nco-IW-7FI"/>
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="9Dp-3g-blc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="10A-QZ-Yl6">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0jr-Jj-SlV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qmz-Tg-l74" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1761" y="54"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="LMb-ky-aIJ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="njl-di-gDZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="3tE-5i-iLF">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="u2J-a9-eTY" kind="relationship" relationship="viewControllers" id="uPU-aq-P1g"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eir-rs-E1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1761" y="-676"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Character" width="15" height="24"/>
+        <image name="TER Icon" width="289" height="289"/>
+    </resources>
 </document>
