@@ -58,7 +58,7 @@ class HousesViewController: UIViewController, UICollectionViewDelegate, UICollec
 extension HousesViewController: UISearchBarDelegate {
     
     public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchBar.tintColor = UIColor.black
+        searchBar.tintColor = UIColor.gold
         searchBar.showsCancelButton = true
         searchBar.keyboardAppearance = .dark
     }
