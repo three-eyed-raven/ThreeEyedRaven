@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		26302C0F1E8B1F6A00AB7506 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26302C0E1E8B1F6A00AB7506 /* UIColorExtension.swift */; };
+		267B23061E91F3B3003D6786 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267B23051E91F3B3003D6786 /* Character.swift */; };
+		267B23081E91F4AD003D6786 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267B23071E91F4AD003D6786 /* House.swift */; };
 		5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2035D91E68F6530035BDF0 /* AppDelegate.swift */; };
 		5F2035DF1E68F6530035BDF0 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2035DD1E68F6530035BDF0 /* Characters.storyboard */; };
 		5F2035E11E68F6530035BDF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2035E01E68F6530035BDF0 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		26302C0E1E8B1F6A00AB7506 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		267B23051E91F3B3003D6786 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		267B23071E91F4AD003D6786 /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		5F2035D61E68F6530035BDF0 /* Three Eyed Raven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Three Eyed Raven.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2035D91E68F6530035BDF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F2035DE1E68F6530035BDF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Characters.storyboard; sourceTree = "<group>"; };
@@ -77,6 +81,24 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		267B23031E91F392003D6786 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5FB100961E898BFB00EC988F /* CharacterCell.swift */,
+				5FB1009F1E8AF3EF00EC988F /* HouseCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		267B23041E91F3A0003D6786 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				267B23051E91F3B3003D6786 /* Character.swift */,
+				267B23071E91F4AD003D6786 /* House.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		5F2035CD1E68F6530035BDF0 = {
 			isa = PBXGroup;
 			children = (
@@ -98,11 +120,11 @@
 		5F2035D81E68F6530035BDF0 /* Three Eyed Raven */ = {
 			isa = PBXGroup;
 			children = (
+				267B23041E91F3A0003D6786 /* Models */,
+				267B23031E91F392003D6786 /* Views */,
 				26302C0D1E8B1F5B00AB7506 /* Extensions */,
 				5FB1009B1E8AE95000EC988F /* Storyboards */,
 				5FB100981E898C0C00EC988F /* View Controllers */,
-				5FB100961E898BFB00EC988F /* CharacterCell.swift */,
-				5FB1009F1E8AF3EF00EC988F /* HouseCell.swift */,
 				5F2035D91E68F6530035BDF0 /* AppDelegate.swift */,
 				5F2035E01E68F6530035BDF0 /* Assets.xcassets */,
 				5F2035E21E68F6530035BDF0 /* LaunchScreen.storyboard */,
@@ -257,6 +279,8 @@
 			files = (
 				26302C0F1E8B1F6A00AB7506 /* UIColorExtension.swift in Sources */,
 				5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */,
+				267B23081E91F4AD003D6786 /* House.swift in Sources */,
+				267B23061E91F3B3003D6786 /* Character.swift in Sources */,
 				5FB100951E898B3800EC988F /* CharactersViewController.swift in Sources */,
 				5FB100971E898BFB00EC988F /* CharacterCell.swift in Sources */,
 				5FB100A01E8AF3EF00EC988F /* HouseCell.swift in Sources */,
