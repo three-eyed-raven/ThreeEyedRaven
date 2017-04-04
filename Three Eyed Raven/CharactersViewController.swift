@@ -22,7 +22,6 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         searchBar.delegate = self
         tabBar.tintColor = UIColor.darkGray
         self.navigationItem.titleView = searchBar
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
