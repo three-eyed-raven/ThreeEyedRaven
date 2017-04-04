@@ -20,6 +20,7 @@
 		5FB1009E1E8AE9B100EC988F /* HousesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1009D1E8AE9B100EC988F /* HousesViewController.swift */; };
 		5FB100A01E8AF3EF00EC988F /* HouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1009F1E8AF3EF00EC988F /* HouseCell.swift */; };
 		5FB100A21E8AFF9200EC988F /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB100A11E8AFF9200EC988F /* TabBar.storyboard */; };
+		5FFB966A1E933806000AE1E5 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB96691E933806000AE1E5 /* CharacterDetailViewController.swift */; };
 		9D2F75E01720864BB15D9D11 /* Pods_Three_Eyed_Raven.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35F309208DC21EA296E2243 /* Pods_Three_Eyed_Raven.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		5FB1009D1E8AE9B100EC988F /* HousesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousesViewController.swift; sourceTree = "<group>"; };
 		5FB1009F1E8AF3EF00EC988F /* HouseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseCell.swift; sourceTree = "<group>"; };
 		5FB100A11E8AFF9200EC988F /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		5FFB96691E933806000AE1E5 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		853049AF3EB486BA6191EA1F /* Pods-Three Eyed Raven.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Three Eyed Raven.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Three Eyed Raven/Pods-Three Eyed Raven.debug.xcconfig"; sourceTree = "<group>"; };
 		B35F309208DC21EA296E2243 /* Pods_Three_Eyed_Raven.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Three_Eyed_Raven.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7E6CF86B619F53F47A6DF1A /* Pods-Three Eyed Raven.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Three Eyed Raven.release.xcconfig"; path = "Pods/Target Support Files/Pods-Three Eyed Raven/Pods-Three Eyed Raven.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			children = (
 				5FB100941E898B3800EC988F /* CharactersViewController.swift */,
 				5FB1009D1E8AE9B100EC988F /* HousesViewController.swift */,
+				5FFB96691E933806000AE1E5 /* CharacterDetailViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				5FB100951E898B3800EC988F /* CharactersViewController.swift in Sources */,
 				5FB100971E898BFB00EC988F /* CharacterCell.swift in Sources */,
 				5FB100A01E8AF3EF00EC988F /* HouseCell.swift in Sources */,
+				5FFB966A1E933806000AE1E5 /* CharacterDetailViewController.swift in Sources */,
 				5FB1009E1E8AE9B100EC988F /* HousesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

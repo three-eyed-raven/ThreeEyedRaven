@@ -45,20 +45,20 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TER Icon" translatesAutoresizingMaskIntoConstraints="NO" id="VRG-Hf-3GC">
-                                                    <rect key="frame" x="8" y="8" width="163" height="170"/>
+                                                    <rect key="frame" x="14" y="17" width="150" height="150"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="163" id="1K6-ce-NlL"/>
-                                                        <constraint firstAttribute="height" constant="170" id="qxi-NY-5sp"/>
+                                                        <constraint firstAttribute="width" constant="150" id="1K6-ce-NlL"/>
+                                                        <constraint firstAttribute="height" constant="150" id="qxi-NY-5sp"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="Zqk-yc-Hk3" firstAttribute="centerX" secondItem="VIr-h4-uj2" secondAttribute="centerX" id="HF6-8X-Yld"/>
-                                            <constraint firstItem="Zqk-yc-Hk3" firstAttribute="top" secondItem="VRG-Hf-3GC" secondAttribute="bottom" constant="8" id="KhN-ie-QcG"/>
-                                            <constraint firstItem="VRG-Hf-3GC" firstAttribute="leading" secondItem="VIr-h4-uj2" secondAttribute="leading" constant="8" id="RGs-CS-xKm"/>
-                                            <constraint firstItem="VRG-Hf-3GC" firstAttribute="top" secondItem="VIr-h4-uj2" secondAttribute="top" constant="8" id="eDw-jY-h5W"/>
-                                            <constraint firstAttribute="trailing" secondItem="VRG-Hf-3GC" secondAttribute="trailing" constant="8" id="gkn-NS-teu"/>
+                                            <constraint firstItem="Zqk-yc-Hk3" firstAttribute="top" secondItem="VRG-Hf-3GC" secondAttribute="bottom" constant="19" id="KhN-ie-QcG"/>
+                                            <constraint firstItem="VRG-Hf-3GC" firstAttribute="leading" secondItem="VIr-h4-uj2" secondAttribute="leading" constant="14" id="RGs-CS-xKm"/>
+                                            <constraint firstItem="VRG-Hf-3GC" firstAttribute="top" secondItem="VIr-h4-uj2" secondAttribute="top" constant="17" id="eDw-jY-h5W"/>
+                                            <constraint firstAttribute="trailing" secondItem="VRG-Hf-3GC" secondAttribute="trailing" constant="15" id="gkn-NS-teu"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="houseImageView" destination="VRG-Hf-3GC" id="uNd-gx-GKV"/>
