@@ -20,6 +20,7 @@
 		5FB1009E1E8AE9B100EC988F /* HousesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1009D1E8AE9B100EC988F /* HousesViewController.swift */; };
 		5FB100A01E8AF3EF00EC988F /* HouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1009F1E8AF3EF00EC988F /* HouseCell.swift */; };
 		5FB100A21E8AFF9200EC988F /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB100A11E8AFF9200EC988F /* TabBar.storyboard */; };
+		5FCAA1271E9441FD00F60C95 /* HouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCAA1261E9441FD00F60C95 /* HouseDetailViewController.swift */; };
 		5FFB966A1E933806000AE1E5 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB96691E933806000AE1E5 /* CharacterDetailViewController.swift */; };
 		9D2F75E01720864BB15D9D11 /* Pods_Three_Eyed_Raven.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35F309208DC21EA296E2243 /* Pods_Three_Eyed_Raven.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		5FB1009D1E8AE9B100EC988F /* HousesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousesViewController.swift; sourceTree = "<group>"; };
 		5FB1009F1E8AF3EF00EC988F /* HouseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseCell.swift; sourceTree = "<group>"; };
 		5FB100A11E8AFF9200EC988F /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		5FCAA1261E9441FD00F60C95 /* HouseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseDetailViewController.swift; sourceTree = "<group>"; };
 		5FFB96691E933806000AE1E5 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		853049AF3EB486BA6191EA1F /* Pods-Three Eyed Raven.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Three Eyed Raven.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Three Eyed Raven/Pods-Three Eyed Raven.debug.xcconfig"; sourceTree = "<group>"; };
 		B35F309208DC21EA296E2243 /* Pods_Three_Eyed_Raven.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Three_Eyed_Raven.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +143,7 @@
 				5FB100941E898B3800EC988F /* CharactersViewController.swift */,
 				5FB1009D1E8AE9B100EC988F /* HousesViewController.swift */,
 				5FFB96691E933806000AE1E5 /* CharacterDetailViewController.swift */,
+				5FCAA1261E9441FD00F60C95 /* HouseDetailViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FCAA1271E9441FD00F60C95 /* HouseDetailViewController.swift in Sources */,
 				26302C0F1E8B1F6A00AB7506 /* UIColorExtension.swift in Sources */,
 				5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */,
 				267B23081E91F4AD003D6786 /* House.swift in Sources */,
