@@ -25,7 +25,7 @@ class GoTClient: NSObject {
         let task: URLSessionDataTask = session.dataTask(with: request as URLRequest,completionHandler: { (dataOrNil, response, error) in
             if let data = dataOrNil {
                 if let responseArray = try! JSONSerialization.jsonObject(with: data, options:[]) as? [Dictionary<String, Any>] {
-                    print("RESPONSE: \(responseArray)")
+                    //print("RESPONSE: \(responseArray)")
                     var characters: [Character] = []
                     for dictionary in responseArray {
                         characters.append(Character(dictionary: dictionary))
