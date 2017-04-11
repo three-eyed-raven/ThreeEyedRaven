@@ -6,5 +6,7 @@ target 'Three Eyed Raven' do
   use_frameworks!
 
   # Pods for Three Eyed Raven
+  pod 'AFNetworking', '~> 3.0'
+  pod 'MBProgressHUD'
 
 end
