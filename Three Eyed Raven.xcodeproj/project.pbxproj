@@ -295,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26EBA9011E93398B002018F4 /* GoTClient.swift in Sources */,
+				5FCAA1271E9441FD00F60C95 /* HouseDetailViewController.swift in Sources */,
 				26302C0F1E8B1F6A00AB7506 /* UIColorExtension.swift in Sources */,
 				5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */,
 				267B23081E91F4AD003D6786 /* House.swift in Sources */,
