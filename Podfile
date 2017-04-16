@@ -8,5 +8,8 @@ target 'Three Eyed Raven' do
   # Pods for Three Eyed Raven
   pod 'AFNetworking', '~> 3.0'
   pod 'MBProgressHUD'
+  pod 'Alamofire', '~> 4.4'
+  pod 'SwiftyJSON'
+  pod 'AlamofireImage', '~> 3.1'
 
 end

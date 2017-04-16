@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import MBProgressHUD
+import AFNetworking
 
 class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var characters: [Character] = []
     let searchBar = UISearchBar()
     let tabBar = UITabBar()
     
@@ -22,14 +24,28 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         searchBar.delegate = self
         tabBar.tintColor = UIColor.darkGray
         self.navigationItem.titleView = searchBar
+        MBProgressHUD.showAdded(to: self.tableView, animated: true)
+        GoTClient.getCharacters(success: { (characters: [Character]) in
+            self.characters = characters
+            self.tableView.reloadData()
+            MBProgressHUD.hide(for: self.tableView, animated: true)
+        }) { 
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell") as! CharacterCell
+        let character = characters[indexPath.row]
+        cell.characterNameLabel.text = character.name
+        if let imageUrl = character.imageUrl {
+          cell.characterImageView.setImageWith(imageUrl)
+        }
+        cell.characterDescriptionLabel.text = character.aliases?.first
         return cell
     }
     
@@ -39,16 +55,16 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let characterDetailVC = segue.destination as! CharacterDetailViewController
+        if let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell) {
+            let character = characters[indexPath.row]
+            characterDetailVC.character = character
+        }
     }
-    */
-
 }
 
 extension CharactersViewController: UISearchBarDelegate {

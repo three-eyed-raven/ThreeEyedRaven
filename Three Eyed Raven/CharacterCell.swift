@@ -18,7 +18,8 @@ class CharacterCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        self.characterImageView.layer.cornerRadius = 3
+        self.characterImageView.clipsToBounds = true
         self.selectionStyle = .none
     }
 

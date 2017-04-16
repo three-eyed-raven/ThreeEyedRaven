@@ -16,11 +16,18 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var characterFatherLabel: UILabel!
     @IBOutlet weak var charcterMotherLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var characterImageView: UIImageView!
+    var character: Character?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.characterImageView.layer.cornerRadius = 3
+        self.characterImageView.clipsToBounds = true
 
-        // Do any additional setup after loading the view.
+        self.characterNameLabel.text = character?.name
+        if let imageUrl = character?.imageUrl {
+            self.characterImageView.setImageWith(imageUrl)
+        }
     }
 
     override func didReceiveMemoryWarning() {
