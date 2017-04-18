@@ -10,6 +10,7 @@
 		26302C0F1E8B1F6A00AB7506 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26302C0E1E8B1F6A00AB7506 /* UIColorExtension.swift */; };
 		267B23061E91F3B3003D6786 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267B23051E91F3B3003D6786 /* Character.swift */; };
 		267B23081E91F4AD003D6786 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267B23071E91F4AD003D6786 /* House.swift */; };
+		268956841EA30C880025CD7A /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268956831EA30C880025CD7A /* InfiniteScrollActivityView.swift */; };
 		26EBA9011E93398B002018F4 /* GoTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EBA9001E93398B002018F4 /* GoTClient.swift */; };
 		5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2035D91E68F6530035BDF0 /* AppDelegate.swift */; };
 		5F2035DF1E68F6530035BDF0 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2035DD1E68F6530035BDF0 /* Characters.storyboard */; };
@@ -30,6 +31,7 @@
 		26302C0E1E8B1F6A00AB7506 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		267B23051E91F3B3003D6786 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		267B23071E91F4AD003D6786 /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
+		268956831EA30C880025CD7A /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
 		26EBA9001E93398B002018F4 /* GoTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoTClient.swift; sourceTree = "<group>"; };
 		5F2035D61E68F6530035BDF0 /* Three Eyed Raven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Three Eyed Raven.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2035D91E68F6530035BDF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			children = (
 				5FB100961E898BFB00EC988F /* CharacterCell.swift */,
 				5FB1009F1E8AF3EF00EC988F /* HouseCell.swift */,
+				268956831EA30C880025CD7A /* InfiniteScrollActivityView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -203,7 +206,7 @@
 				TargetAttributes = {
 					5F2035D51E68F6530035BDF0 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 2S3D8J8M3T;
+						DevelopmentTeam = KDGWDMD53Y;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				268956841EA30C880025CD7A /* InfiniteScrollActivityView.swift in Sources */,
 				26EBA9011E93398B002018F4 /* GoTClient.swift in Sources */,
 				5FCAA1271E9441FD00F60C95 /* HouseDetailViewController.swift in Sources */,
 				26302C0F1E8B1F6A00AB7506 /* UIColorExtension.swift in Sources */,
@@ -426,10 +430,10 @@
 			baseConfigurationReference = 853049AF3EB486BA6191EA1F /* Pods-Three Eyed Raven.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2S3D8J8M3T;
+				DEVELOPMENT_TEAM = KDGWDMD53Y;
 				INFOPLIST_FILE = "Three Eyed Raven/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "world.threeeyedraven.Three-Eyed-Raven";
+				PRODUCT_BUNDLE_IDENTIFIER = "worlds.threeeyedraven.Three-Eyed-Raven";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -440,10 +444,10 @@
 			baseConfigurationReference = B7E6CF86B619F53F47A6DF1A /* Pods-Three Eyed Raven.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2S3D8J8M3T;
+				DEVELOPMENT_TEAM = KDGWDMD53Y;
 				INFOPLIST_FILE = "Three Eyed Raven/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "world.threeeyedraven.Three-Eyed-Raven";
+				PRODUCT_BUNDLE_IDENTIFIER = "worlds.threeeyedraven.Three-Eyed-Raven";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

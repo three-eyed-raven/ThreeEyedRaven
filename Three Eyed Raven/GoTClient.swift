@@ -13,10 +13,12 @@ import SwiftyJSON
 
 class GoTClient: NSObject {
     static let baseUrl = "https://www.anapioficeandfire.com/api/"
+    static var page = 1
     
     class func getCharacters(success: @escaping ([Character]) -> (), failure: @escaping () -> ()) {
         var charactersArray: [Character] = []
-        let endpoint = "characters?page=1&pageSize=50"
+        let endpoint = "characters?page=\(page)&pageSize=50"
+        page += 1
         let charactersUrl = URL(string: "\(baseUrl)\(endpoint)")
         guard let url = charactersUrl else {
             failure()
@@ -55,6 +57,9 @@ class GoTClient: NSObject {
     
     class func getCharacterPhoto(characters: [Character], success: @escaping () -> (), failure: @escaping () -> ()) {
         print(characters.count)
+        if characters.count == 0 {
+            success()
+        }
         var photosReceived = 0
         for character in characters {
             let photoBaseUrl = "https://api.cognitive.microsoft.com/bing/v5.0/images/search"

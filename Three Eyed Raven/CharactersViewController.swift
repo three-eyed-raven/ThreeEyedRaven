@@ -16,6 +16,8 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     var characters: [Character] = []
     let searchBar = UISearchBar()
     let tabBar = UITabBar()
+    var isMoreDataLoading = false
+    var loadingMoreView: InfiniteScrollActivityView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +26,29 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         searchBar.delegate = self
         tabBar.tintColor = UIColor.darkGray
         self.navigationItem.titleView = searchBar
+        
+        // Set up Infinite Scroll loading indicator
+        let frame = CGRect(x: 0, y: tableView.contentSize.height, width: tableView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
+        loadingMoreView = InfiniteScrollActivityView(frame: frame)
+        loadingMoreView!.isHidden = true
+        tableView.addSubview(loadingMoreView!)
+        
+        var insets = tableView.contentInset
+        insets.bottom += InfiniteScrollActivityView.defaultHeight
+        tableView.contentInset = insets
+        
+        fetchCharacters()
+    }
+    
+    func fetchCharacters() {
         MBProgressHUD.showAdded(to: self.tableView, animated: true)
         GoTClient.getCharacters(success: { (characters: [Character]) in
-            self.characters = characters
+            self.characters += characters
+            self.isMoreDataLoading = false
+            self.loadingMoreView!.stopAnimating()
             self.tableView.reloadData()
             MBProgressHUD.hide(for: self.tableView, animated: true)
-        }) { 
+        }) {
             
         }
     }
@@ -81,5 +100,29 @@ extension CharactersViewController: UISearchBarDelegate {
         searchBar.showsCancelButton = false
         searchBar.text = ""
         searchBar.resignFirstResponder()
+    }
+}
+
+extension CharactersViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (!isMoreDataLoading) {
+            // Calculate the position of one screen length before the bottom of the results
+            let scrollViewContentHeight = tableView.contentSize.height
+            let scrollOffsetThreshold = scrollViewContentHeight - tableView.bounds.size.height
+            
+            // When the user has scrolled past the threshold, start requesting
+            if(scrollView.contentOffset.y > scrollOffsetThreshold && tableView.isDragging) {
+                isMoreDataLoading = true
+                
+                // Update position of loadingMoreView, and start loading indicator
+                let frame = CGRect(x: 0, y: tableView.contentSize.height, width: tableView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
+                loadingMoreView?.frame = frame
+                loadingMoreView!.startAnimating()
+                
+                fetchCharacters()
+            }
+            
+        }
     }
 }
