@@ -16,12 +16,16 @@ class Character: NSObject {
     var culture: String?
     var birthDate: String?
     var allegiances: [String]?
+    var house: House?
     var titles: [String]?
     var aliases: [String]?
     var mother: String?
     var father: String?
     var spouse: String?
-    var playedBy: String?
+    var playedBy: [String]?
+    var image: UIImage?
+    var imageUrl: URL?
+    
 
     init(dictionary: Dictionary<String, Any>) {
         //if let id = dictionary["id"] { self.id = id as? Int }
@@ -35,7 +39,7 @@ class Character: NSObject {
         if let mother = dictionary["mother"] { self.mother = mother as? String }
         if let father = dictionary["father"] { self.father = father as? String }
         if let spouse = dictionary["spouse"] { self.spouse = spouse as? String }
-        if let playedBy = dictionary["playedBy"] { self.playedBy = playedBy as? String }
+        if let playedBy = dictionary["playedBy"] { self.playedBy = playedBy as? [String] }
     }
     
     class func charactersAsArray(dictionaries: [Dictionary<String, Any>]) -> [Character]{

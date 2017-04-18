@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import MBProgressHUD
+import AFNetworking
 
 class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var characters: [Character] = []
     let searchBar = UISearchBar()
     let tabBar = UITabBar()
+    var isMoreDataLoading = false
+    var loadingMoreView: InfiniteScrollActivityView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +26,46 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         searchBar.delegate = self
         tabBar.tintColor = UIColor.darkGray
         self.navigationItem.titleView = searchBar
+        
+        // Set up Infinite Scroll loading indicator
+        let frame = CGRect(x: 0, y: tableView.contentSize.height, width: tableView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
+        loadingMoreView = InfiniteScrollActivityView(frame: frame)
+        loadingMoreView!.isHidden = true
+        tableView.addSubview(loadingMoreView!)
+        
+        var insets = tableView.contentInset
+        insets.bottom += InfiniteScrollActivityView.defaultHeight
+        tableView.contentInset = insets
+        
+        fetchCharacters()
+    }
+    
+    func fetchCharacters() {
+        MBProgressHUD.showAdded(to: self.tableView, animated: true)
+        GoTClient.getCharacters(success: { (characters: [Character]) in
+            self.characters += characters
+            self.isMoreDataLoading = false
+            self.loadingMoreView!.stopAnimating()
+            self.tableView.reloadData()
+            MBProgressHUD.hide(for: self.tableView, animated: true)
+        }) {
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell") as! CharacterCell
+        let character = characters[indexPath.row]
+        cell.characterNameLabel.text = character.name
+        if let imageUrl = character.imageUrl {
+          cell.characterImageView.setImageWith(imageUrl)
+        }
+        cell.characterHouseLabel.text = character.house?.name ?? ""
+        cell.characterDescriptionLabel.text = character.aliases?.first
         return cell
     }
     
@@ -39,16 +75,16 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let characterDetailVC = segue.destination as! CharacterDetailViewController
+        if let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell) {
+            let character = characters[indexPath.row]
+            characterDetailVC.character = character
+        }
     }
-    */
-
 }
 
 extension CharactersViewController: UISearchBarDelegate {
@@ -65,5 +101,29 @@ extension CharactersViewController: UISearchBarDelegate {
         searchBar.showsCancelButton = false
         searchBar.text = ""
         searchBar.resignFirstResponder()
+    }
+}
+
+extension CharactersViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (!isMoreDataLoading) {
+            // Calculate the position of one screen length before the bottom of the results
+            let scrollViewContentHeight = tableView.contentSize.height
+            let scrollOffsetThreshold = scrollViewContentHeight - tableView.bounds.size.height
+            
+            // When the user has scrolled past the threshold, start requesting
+            if(scrollView.contentOffset.y > scrollOffsetThreshold && tableView.isDragging) {
+                isMoreDataLoading = true
+                
+                // Update position of loadingMoreView, and start loading indicator
+                let frame = CGRect(x: 0, y: tableView.contentSize.height, width: tableView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
+                loadingMoreView?.frame = frame
+                loadingMoreView!.startAnimating()
+                
+                fetchCharacters()
+            }
+            
+        }
     }
 }
