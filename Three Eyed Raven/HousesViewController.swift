@@ -21,6 +21,10 @@ class HousesViewController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView.delegate = self
         collectionView.dataSource = self
         self.collectionView.alwaysBounceVertical = true
+        
+        GoTClient.getHouseWith(name: "House Stark", success: { (house: [House]) in }) { 
+            
+        }
 
         
         // Do any additional setup after loading the view.
