@@ -64,6 +64,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         if let imageUrl = character.imageUrl {
           cell.characterImageView.setImageWith(imageUrl)
         }
+        cell.characterHouseLabel.text = character.house?.name ?? ""
         cell.characterDescriptionLabel.text = character.aliases?.first
         return cell
     }

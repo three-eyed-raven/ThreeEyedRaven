@@ -37,6 +37,13 @@ class GoTClient: NSObject {
                             charactersArray.append(c)
                         }
                     }
+                    for character in charactersArray {
+                        setHouse(for: character, success: { 
+                            
+                        }, failure: { 
+                            
+                        })
+                    }
                     getCharacterPhoto(characters: charactersArray, success: {
                         success(charactersArray)
                     }, failure: { 
@@ -50,13 +57,7 @@ class GoTClient: NSObject {
         task.resume()
     }
     
-    class func delay(_ delay:Double, closure:@escaping ()->()) {
-        DispatchQueue.main.asyncAfter(
-            deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
-    }
-    
     class func getCharacterPhoto(characters: [Character], success: @escaping () -> (), failure: @escaping () -> ()) {
-        print(characters.count)
         if characters.count == 0 {
             success()
         }
@@ -72,9 +73,7 @@ class GoTClient: NSObject {
                 "Ocp-Apim-Subscription-Key": "ba829953bc8245a7a0cd5b846d76443a",
                 "Accept": "application/json"
             ]
-            print("getting image for \(character.name!)\n")
             Alamofire.request(photoBaseUrl, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
-                print("got image for \(character.name!)\n")
                 photosReceived += 1
                 let json = JSON(response.value)
                 guard let imageUrlString = json["value"][0]["contentUrl"].string else {
@@ -83,12 +82,27 @@ class GoTClient: NSObject {
                 if let imageUrl = URL(string: imageUrlString) {
                     character.imageUrl = imageUrl
                 }
-                print("photos received: \(photosReceived)\n")
                 if (photosReceived == characters.count) {
-                    print("last photo received\n")
                     success()
                 }
             }
+        }
+    }
+    
+    class func setHouse(for character: Character, success: @escaping () -> (), failure: @escaping () -> ()) {
+        if (character.allegiances?.isEmpty)! {
+            return
+        }
+        let houseUrl = (character.allegiances?.first)!
+        Alamofire.request(houseUrl).responseJSON { (response) in
+            guard let responseValue = response.value else {
+                failure()
+                return
+            }
+            let json = JSON(responseValue)
+            let house = House(json: json)
+            character.house = house
+            success()
         }
     }
     

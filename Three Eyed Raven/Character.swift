@@ -16,6 +16,7 @@ class Character: NSObject {
     var culture: String?
     var birthDate: String?
     var allegiances: [String]?
+    var house: House?
     var titles: [String]?
     var aliases: [String]?
     var mother: String?
