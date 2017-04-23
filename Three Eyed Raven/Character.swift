@@ -10,7 +10,6 @@ import UIKit
 
 class Character: NSObject {
     
-    //var id: Int?
     var name: String?
     var gender: String?
     var culture: String?
@@ -28,7 +27,6 @@ class Character: NSObject {
     
 
     init(dictionary: Dictionary<String, Any>) {
-        //if let id = dictionary["id"] { self.id = id as? Int }
         if let name = dictionary["name"] { self.name = name as? String }
         if let gender = dictionary["gender"] { self.gender = gender as? String }
         if let culture = dictionary["culture"] { self.culture = culture as? String }

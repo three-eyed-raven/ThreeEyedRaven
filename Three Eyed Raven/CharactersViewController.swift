@@ -9,6 +9,7 @@
 import UIKit
 import MBProgressHUD
 import AFNetworking
+import RealmSwift
 
 class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
@@ -21,6 +22,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let realm = try! Realm()
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
@@ -37,7 +39,13 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         insets.bottom += InfiniteScrollActivityView.defaultHeight
         tableView.contentInset = insets
         
-        fetchCharacters()
+        GoTClient.downloadCharacters(success: { 
+            let characters = realm.objects(RealmCharacter.self).sorted(byKeyPath: "name")
+            print(characters.count)
+        }) { 
+            print("Error downloading characters")
+        }
+        //fetchCharacters()
     }
     
     func fetchCharacters() {

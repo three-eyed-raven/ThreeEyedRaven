@@ -10,52 +10,105 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import SwiftyJSON
+import RealmSwift
+
+let MAXCHARACTERPAGE = 43
 
 class GoTClient: NSObject {
     static let baseUrl = "https://www.anapioficeandfire.com/api/"
     static var page = 1
     
-    class func getCharacters(success: @escaping ([Character]) -> (), failure: @escaping () -> ()) {
-        var charactersArray: [Character] = []
-        let endpoint = "characters?page=\(page)&pageSize=50"
-        page += 1
-        let charactersUrl = URL(string: "\(baseUrl)\(endpoint)")
-        guard let url = charactersUrl else {
-            failure()
-            return
-        }
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        let task: URLSessionDataTask = session.dataTask(with: request as URLRequest,completionHandler: { (dataOrNil, response, error) in
-            if let data = dataOrNil {
-                if let responseArray = try! JSONSerialization.jsonObject(with: data, options:[]) as? [Dictionary<String, Any>] {
-                    for dictionary in responseArray {
-                        let name = dictionary["name"] as! String
-                        let playedBy = dictionary["playedBy"] as! [String]
-                        if !name.isEmpty && !playedBy.isEmpty {
-                            let c = Character(dictionary: dictionary)
-                            charactersArray.append(c)
+    class func downloadCharacters(success: @escaping () -> (), failure: @escaping () -> ()) {
+        let realm = try! Realm()
+        var url = "\(baseUrl)characters?pageSize=50&page=1"
+        var responsesReceived = 0
+
+        for i in 1...MAXCHARACTERPAGE {
+            Alamofire.request(url).responseJSON { (response) in
+                guard let responseValue = response.value else {
+                    failure()
+                    return
+                }
+                let charactersJson = JSON(responseValue)
+                
+                for characterJson in charactersJson.array! {
+                    let character = RealmCharacter()
+                    let name = (characterJson["name"].string)!
+                    let playedBy = (characterJson["playedBy"].array)!
+                    // Save only characters who have a name and an associated actor
+                    if (!name.isEmpty && !playedBy.isEmpty) {
+                        character.name = (characterJson["name"].string)!
+                        character.urlString = (characterJson["url"].string)!
+                        try! realm.write {
+                            realm.add(character)
                         }
                     }
-                    for character in charactersArray {
-                        setHouse(for: character, success: { 
-                            
-                        }, failure: { 
-                            
-                        })
-                    }
-                    getCharacterPhoto(characters: charactersArray, success: {
-                        success(charactersArray)
-                    }, failure: { 
-                        
-                    })
-                } else {
-                    failure()
+                }
+                responsesReceived += 1
+                if responsesReceived == MAXCHARACTERPAGE {
+                    success()
+                }
+                
+            }
+            url = "\(baseUrl)characters?pageSize=50&page=\(i)"
+        }
+    }
+    
+    class func get(characters: [RealmCharacter], from index: Int, success: @escaping ([Character]) -> (), failure: @escaping () -> ()) {
+        var charactersArray: [Character] = []
+        for character in characters {
+            guard let url = URL(string: character.urlString) else {
+                continue
+            }
+            Alamofire.request(url).responseJSON { (response) in
+                if let responseValue = response.value {
+                    let json = JSON(responseValue)
                 }
             }
-        })
-        task.resume()
+        }
     }
+    
+//    class func getCharacters(success: @escaping ([Character]) -> (), failure: @escaping () -> ()) {
+//        var charactersArray: [Character] = []
+//        let endpoint = "characters?page=\(page)&pageSize=50"
+//        page += 1
+//        let charactersUrl = URL(string: "\(baseUrl)\(endpoint)")
+//        guard let url = charactersUrl else {
+//            failure()
+//            return
+//        }
+//        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+//        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+//        let task: URLSessionDataTask = session.dataTask(with: request as URLRequest,completionHandler: { (dataOrNil, response, error) in
+//            if let data = dataOrNil {
+//                if let responseArray = try! JSONSerialization.jsonObject(with: data, options:[]) as? [Dictionary<String, Any>] {
+//                    for dictionary in responseArray {
+//                        let name = dictionary["name"] as! String
+//                        let playedBy = dictionary["playedBy"] as! [String]
+//                        if !name.isEmpty && !playedBy.isEmpty {
+//                            let c = Character(dictionary: dictionary)
+//                            charactersArray.append(c)
+//                        }
+//                    }
+//                    for character in charactersArray {
+//                        setHouse(for: character, success: { 
+//                            
+//                        }, failure: { 
+//                            
+//                        })
+//                    }
+//                    getCharacterPhoto(characters: charactersArray, success: {
+//                        success(charactersArray)
+//                    }, failure: { 
+//                        
+//                    })
+//                } else {
+//                    failure()
+//                }
+//            }
+//        })
+//        task.resume()
+//    }
     
     class func getCharacterPhoto(characters: [Character], success: @escaping () -> (), failure: @escaping () -> ()) {
         if characters.count == 0 {
@@ -75,7 +128,7 @@ class GoTClient: NSObject {
             ]
             Alamofire.request(photoBaseUrl, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
                 photosReceived += 1
-                let json = JSON(response.value)
+                let json = JSON(response.value!)
                 guard let imageUrlString = json["value"][0]["contentUrl"].string else {
                     return
                 }
@@ -148,7 +201,7 @@ class GoTClient: NSObject {
                     print("RESPONSE: \(responseArray)")
                     var houses: [House] = []
                     for dictionary in responseArray {
-                        houses.append(House(dictionary: dictionary))
+                        // houses.append(House(dictionary: dictionary))
                     }
                     success(houses)
                 } else {
