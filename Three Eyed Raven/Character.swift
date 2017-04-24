@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class Character: NSObject {
     
@@ -26,27 +28,33 @@ class Character: NSObject {
     var imageUrl: URL?
     
 
-    init(dictionary: Dictionary<String, Any>) {
-        if let name = dictionary["name"] { self.name = name as? String }
-        if let gender = dictionary["gender"] { self.gender = gender as? String }
-        if let culture = dictionary["culture"] { self.culture = culture as? String }
-        if let birthDate = dictionary["born"] { self.birthDate = birthDate as? String }
-        if let allegiances = dictionary["allegiances"] { self.allegiances = allegiances as? [String] }
-        if let titles = dictionary["titles"] { self.titles = titles as? [String] }
-        if let aliases = dictionary["aliases"] { self.aliases = aliases as? [String] }
-        if let mother = dictionary["mother"] { self.mother = mother as? String }
-        if let father = dictionary["father"] { self.father = father as? String }
-        if let spouse = dictionary["spouse"] { self.spouse = spouse as? String }
-        if let playedBy = dictionary["playedBy"] { self.playedBy = playedBy as? [String] }
+    init(json: JSON?) {
+        if let name = json?["name"] { self.name = name.string }
+        if let gender = json?["gender"] { self.gender = gender.string }
+        if let culture = json?["culture"] { self.culture = culture.string }
+        if let birthDate = json?["born"] { self.birthDate = birthDate.string }
+        if let allegiances = json?["allegiances"] { self.allegiances = allegiances.arrayObject as! [String]? }
+        if let titles = json?["titles"] { self.titles = titles.arrayObject as! [String]? }
+        if let aliases = json?["aliases"] { self.aliases = aliases.arrayObject as! [String]? }
+        if let mother = json?["mother"] { self.mother = mother.string }
+        if let father = json?["father"] { self.father = father.string }
+        if let spouse = json?["spouse"] { self.spouse = spouse.string }
+        if let playedBy = json?["playedBy"] { self.playedBy = playedBy.arrayObject as! [String]? }
     }
     
-    class func charactersAsArray(dictionaries: [Dictionary<String, Any>]) -> [Character]{
-        var characters: [Character] = []
-        for dictionary in dictionaries {
-            let character = Character(dictionary: dictionary)
-            characters.append(character)
+    func setHouse() {
+        if (self.allegiances?.isEmpty)! {
+            return
         }
-        return characters
+        let houseUrl = (self.allegiances?.first)!
+        Alamofire.request(houseUrl).responseJSON { (response) in
+            guard let responseValue = response.value else {
+                return
+            }
+            let json = JSON(responseValue)
+            let house = House(json: json)
+            self.house = house
+        }
     }
-    
+
 }

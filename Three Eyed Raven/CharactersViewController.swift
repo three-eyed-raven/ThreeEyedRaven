@@ -14,6 +14,8 @@ import RealmSwift
 class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
+    var characterIndex = 0
+    var storedCharacters: [RealmCharacter] = []
     var characters: [Character] = []
     let searchBar = UISearchBar()
     let tabBar = UITabBar()
@@ -38,27 +40,35 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         var insets = tableView.contentInset
         insets.bottom += InfiniteScrollActivityView.defaultHeight
         tableView.contentInset = insets
-        
+        MBProgressHUD.showAdded(to: self.tableView, animated: true)
         GoTClient.downloadCharacters(success: { 
             let characters = realm.objects(RealmCharacter.self).sorted(byKeyPath: "name")
-            print(characters.count)
+            self.storedCharacters = Array(characters)
+            MBProgressHUD.hide(for: self.tableView, animated: true)
+            self.fetchCharacters()
         }) { 
             print("Error downloading characters")
         }
-        //fetchCharacters()
     }
     
     func fetchCharacters() {
         MBProgressHUD.showAdded(to: self.tableView, animated: true)
-        GoTClient.getCharacters(success: { (characters: [Character]) in
+        GoTClient.get(characters: storedCharacters, from: characterIndex, success: { (characters: [Character]) in
+            for character in characters {
+                character.setHouse()
+            }
             self.characters += characters
             self.isMoreDataLoading = false
             self.loadingMoreView!.stopAnimating()
             self.tableView.reloadData()
             MBProgressHUD.hide(for: self.tableView, animated: true)
         }) {
-            
+            self.isMoreDataLoading = false
+            self.loadingMoreView!.stopAnimating()
+            MBProgressHUD.hide(for: self.tableView, animated: true)
+            print("fetching characters failed")
         }
+        characterIndex += 10
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,7 +80,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         let character = characters[indexPath.row]
         cell.characterNameLabel.text = character.name
         if let imageUrl = character.imageUrl {
-          cell.characterImageView.setImageWith(imageUrl)
+            cell.characterImageView.setImageWith(imageUrl)
         }
         cell.characterHouseLabel.text = character.house?.name ?? ""
         cell.characterDescriptionLabel.text = character.aliases?.first
