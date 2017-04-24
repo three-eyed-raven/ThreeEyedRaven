@@ -13,6 +13,7 @@
 		267B23081E91F4AD003D6786 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267B23071E91F4AD003D6786 /* House.swift */; };
 		268956841EA30C880025CD7A /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268956831EA30C880025CD7A /* InfiniteScrollActivityView.swift */; };
 		26E06E011EAD518C0000C01D /* RealmCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E06E001EAD518C0000C01D /* RealmCharacter.swift */; };
+		26E06E0D1EADB24D0000C01D /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E06E0C1EADB24D0000C01D /* AutoCompleteTextField.swift */; };
 		26EBA9011E93398B002018F4 /* GoTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EBA9001E93398B002018F4 /* GoTClient.swift */; };
 		5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2035D91E68F6530035BDF0 /* AppDelegate.swift */; };
 		5F2035DF1E68F6530035BDF0 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2035DD1E68F6530035BDF0 /* Characters.storyboard */; };
@@ -36,6 +37,7 @@
 		267B23071E91F4AD003D6786 /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		268956831EA30C880025CD7A /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
 		26E06E001EAD518C0000C01D /* RealmCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCharacter.swift; sourceTree = "<group>"; };
+		26E06E0C1EADB24D0000C01D /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
 		26EBA9001E93398B002018F4 /* GoTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoTClient.swift; sourceTree = "<group>"; };
 		5F2035D61E68F6530035BDF0 /* Three Eyed Raven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Three Eyed Raven.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2035D91E68F6530035BDF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		26E06E0B1EADB24D0000C01D /* AutoCompleteTextField */ = {
+			isa = PBXGroup;
+			children = (
+				26E06E0C1EADB24D0000C01D /* AutoCompleteTextField.swift */,
+			);
+			path = AutoCompleteTextField;
+			sourceTree = "<group>";
+		};
 		26EBA8FF1E93396D002018F4 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +160,7 @@
 		5F2035D81E68F6530035BDF0 /* Three Eyed Raven */ = {
 			isa = PBXGroup;
 			children = (
+				26E06E0B1EADB24D0000C01D /* AutoCompleteTextField */,
 				2622DFC81EAD464B00D6352F /* RealmModels */,
 				26EBA8FF1E93396D002018F4 /* API */,
 				267B23041E91F3A0003D6786 /* Models */,
@@ -317,6 +328,7 @@
 				26302C0F1E8B1F6A00AB7506 /* UIColorExtension.swift in Sources */,
 				5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */,
 				267B23081E91F4AD003D6786 /* House.swift in Sources */,
+				26E06E0D1EADB24D0000C01D /* AutoCompleteTextField.swift in Sources */,
 				267B23061E91F3B3003D6786 /* Character.swift in Sources */,
 				26E06E011EAD518C0000C01D /* RealmCharacter.swift in Sources */,
 				5FB100951E898B3800EC988F /* CharactersViewController.swift in Sources */,

@@ -239,6 +239,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="characterBirthdateLabel" destination="Rr6-cy-cqR" id="ObS-AZ-1Ve"/>
                         <outlet property="characterFatherLabel" destination="F3o-wQ-aMJ" id="AJJ-3p-ZDU"/>
                         <outlet property="characterImageView" destination="aEH-cA-rE3" id="ltD-2e-0xn"/>
                         <outlet property="characterNameLabel" destination="pu4-06-JUd" id="LvK-oZ-xAt"/>
