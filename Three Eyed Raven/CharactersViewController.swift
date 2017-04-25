@@ -64,8 +64,10 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
                 self.tableView.reloadData()
                 MBProgressHUD.hide(for: self.tableView, animated: true)
             //}, failure: {
-                
+            
+            
             //})
+
         }) {
             self.isMoreDataLoading = false
             self.loadingMoreView!.stopAnimating()
