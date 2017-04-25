@@ -64,8 +64,10 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
                 self.tableView.reloadData()
                 MBProgressHUD.hide(for: self.tableView, animated: true)
             //}, failure: {
-                
-           // })
+            
+            
+            //})
+
         }) {
             self.isMoreDataLoading = false
             self.loadingMoreView!.stopAnimating()
@@ -81,6 +83,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell") as! CharacterCell
+        cell.characterImageView.image = nil
         let character = characters[indexPath.row]
         cell.characterNameLabel.text = character.name
         if let imageUrl = character.imageUrl {

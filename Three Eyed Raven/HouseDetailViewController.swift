@@ -17,10 +17,14 @@ class HouseDetailViewController: UIViewController {
     @IBOutlet weak var alliesCollectionView: UICollectionView!
     @IBOutlet weak var enemiesCollectionView: UICollectionView!
     @IBOutlet weak var swornMembersCollectionView: UICollectionView!
+    var house: House?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.houseNameLabel.text = house?.name
+        self.houseRegionLabel.text = house?.region
+        self.houseWordsLabel.text = house?.words
     }
 
     override func didReceiveMemoryWarning() {

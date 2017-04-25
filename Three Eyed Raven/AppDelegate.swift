@@ -43,6 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         try! realm.write {
             realm.deleteAll()
         }
+        
+        GoTClient.downloadHouses(success: { 
+            print("finished downloading houses")
+        }) { 
+            
+        }
         return true
     }
 

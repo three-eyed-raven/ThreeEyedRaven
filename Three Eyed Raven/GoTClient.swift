@@ -13,17 +13,18 @@ import SwiftyJSON
 import RealmSwift
 
 let MAXCHARACTERPAGE = 43
-
+let MAXHOUSEPAGE = 9
 class GoTClient: NSObject {
     static let baseUrl = "https://www.anapioficeandfire.com/api/"
     static var page = 1
     
     class func downloadCharacters(success: @escaping () -> (), failure: @escaping () -> ()) {
         let realm = try! Realm()
-        var url = "\(baseUrl)characters?pageSize=50&page=1"
+        var url: String
         var responsesReceived = 0
 
         for i in 1...MAXCHARACTERPAGE {
+            url = "\(baseUrl)characters?pageSize=50&page=\(i)"
             Alamofire.request(url).responseJSON { (response) in
                 guard let responseValue = response.value else {
                     failure()
@@ -50,7 +51,42 @@ class GoTClient: NSObject {
                 }
                 
             }
-            url = "\(baseUrl)characters?pageSize=50&page=\(i)"
+        }
+    }
+    
+    class func downloadHouses(success: @escaping () -> (), failure: @escaping () -> ()) {
+        let realm = try! Realm()
+        var url: String
+        var responsesReceived = 0
+        
+        for i in 1...MAXHOUSEPAGE {
+            url = "\(baseUrl)houses?pageSize=50&page=\(i)"
+            Alamofire.request(url).responseJSON { (response) in
+                guard let responseValue = response.value else {
+                    failure()
+                    return
+                }
+                let housesJson = JSON(responseValue)
+                
+                for houseJson in housesJson.array! {
+                    let house = RealmHouse()
+                    let name = (houseJson["name"].string)!
+                    // Save only houses that have a name
+                    if (!name.isEmpty) {
+                        house.name = (houseJson["name"].string)!
+                        house.urlString = (houseJson["url"].string)!
+                        print("Storing house name: \(house.name) | url: \(house.urlString)")
+                        try! realm.write {
+                            realm.add(house)
+                        }
+                    }
+                }
+                responsesReceived += 1
+                if responsesReceived == MAXHOUSEPAGE {
+                    success()
+                }
+                
+            }
         }
     }
     
@@ -87,6 +123,42 @@ class GoTClient: NSObject {
             success(charactersArray)
         }
     }
+    
+    class func get(houses: [RealmHouse], from startIndex: Int, success: @escaping ([House]) -> (), failure: @escaping () -> ()) {
+        let housesGroup = DispatchGroup()
+        if startIndex >= houses.count {
+            failure()
+            return
+        }
+        var housesArray: [House] = []
+        for i in startIndex...startIndex+10 {
+            housesGroup.enter()
+            // The end of the array has been reached so we just return the houses collected so far
+            if i == houses.count {
+                success(housesArray)
+                return
+            }
+            guard let url = URL(string: houses[i].urlString) else {
+                continue
+            }
+            print("fetching house at index \(i)")
+            Alamofire.request(url).responseJSON { (response) in
+                print("got a house response")
+                if let responseValue = response.value {
+                    let json = JSON(responseValue)
+                    let house = House(json: json)
+                    housesArray.append(house)
+                    housesGroup.leave()
+                }
+            }
+        }
+        housesGroup.notify(queue: .main) {
+            print("Houses finished fetching")
+            success(housesArray)
+        }
+    }
+    
+    
     
     
     class func getCharacterPhoto(characters: [Character], success: @escaping () -> (), failure: @escaping () -> ()) {

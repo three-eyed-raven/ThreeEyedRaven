@@ -21,65 +21,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ggI-gg-j5I">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6jb-Fy-ZGt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="0Im-Td-IgJ">
-                                    <size key="itemSize" width="179" height="204"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="1" minY="2" maxX="1" maxY="2"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HouseCell" id="VIr-h4-uj2" customClass="HouseCell" customModule="Three_Eyed_Raven" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="2" width="179" height="204"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="179" height="204"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HouseCell" rowHeight="63" id="sp3-iZ-SPz" customClass="HouseCell" customModule="Three_Eyed_Raven" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="63"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sp3-iZ-SPz" id="7NB-KA-rzi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House Stark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqk-yc-Hk3">
-                                                    <rect key="frame" x="43" y="179" width="94" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House Stark" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nj-mf-Vtz">
+                                                    <rect key="frame" x="8" y="8" width="99" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stark" translatesAutoresizingMaskIntoConstraints="NO" id="VRG-Hf-3GC">
-                                                    <rect key="frame" x="4" y="8" width="170" height="170"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Winter is Coming" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hg-D3-UFP">
+                                                    <rect key="frame" x="8" y="31" width="124" height="23.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="castle-dark" translatesAutoresizingMaskIntoConstraints="NO" id="5EV-oa-4qf">
+                                                    <rect key="frame" x="302" y="11" width="13" height="14"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="170" id="1K6-ce-NlL"/>
-                                                        <constraint firstAttribute="height" constant="170" id="qxi-NY-5sp"/>
+                                                        <constraint firstAttribute="height" constant="14" id="IKS-qq-jqv"/>
+                                                        <constraint firstAttribute="width" constant="13" id="a67-oo-IlI"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The North" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1k-xo-UKz">
+                                                    <rect key="frame" x="318" y="13" width="48.5" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="10"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="Zqk-yc-Hk3" firstAttribute="centerX" secondItem="VIr-h4-uj2" secondAttribute="centerX" id="HF6-8X-Yld"/>
-                                            <constraint firstItem="Zqk-yc-Hk3" firstAttribute="top" secondItem="VRG-Hf-3GC" secondAttribute="bottom" constant="1" id="KhN-ie-QcG"/>
-                                            <constraint firstItem="VRG-Hf-3GC" firstAttribute="leading" secondItem="VIr-h4-uj2" secondAttribute="leading" constant="4" id="RGs-CS-xKm"/>
-                                            <constraint firstItem="VRG-Hf-3GC" firstAttribute="top" secondItem="VIr-h4-uj2" secondAttribute="top" constant="8" id="eDw-jY-h5W"/>
-                                            <constraint firstAttribute="trailing" secondItem="VRG-Hf-3GC" secondAttribute="trailing" constant="5" id="gkn-NS-teu"/>
-                                        </constraints>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="m1k-xo-UKz" secondAttribute="trailing" constant="8" id="238-KZ-dje"/>
+                                                <constraint firstItem="5EV-oa-4qf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Nj-mf-Vtz" secondAttribute="trailing" constant="8" id="3kQ-84-uVD"/>
+                                                <constraint firstItem="7Hg-D3-UFP" firstAttribute="leading" secondItem="7NB-KA-rzi" secondAttribute="leading" constant="8" id="7Dd-ck-Ac4"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Hg-D3-UFP" secondAttribute="trailing" constant="8" id="CgN-Op-q7S"/>
+                                                <constraint firstItem="m1k-xo-UKz" firstAttribute="top" secondItem="7NB-KA-rzi" secondAttribute="top" constant="13" id="G80-1v-jKb"/>
+                                                <constraint firstItem="m1k-xo-UKz" firstAttribute="leading" secondItem="5EV-oa-4qf" secondAttribute="trailing" constant="3" id="Pyj-BL-FM9"/>
+                                                <constraint firstItem="5EV-oa-4qf" firstAttribute="top" secondItem="7NB-KA-rzi" secondAttribute="top" constant="11" id="UoD-63-DKC"/>
+                                                <constraint firstAttribute="bottom" secondItem="7Hg-D3-UFP" secondAttribute="bottom" constant="8" id="efm-W8-FvJ"/>
+                                                <constraint firstItem="8Nj-mf-Vtz" firstAttribute="leading" secondItem="7NB-KA-rzi" secondAttribute="leading" constant="8" id="mrd-12-5Kq"/>
+                                                <constraint firstItem="7Hg-D3-UFP" firstAttribute="top" secondItem="8Nj-mf-Vtz" secondAttribute="bottom" constant="2" id="sCp-N5-N15"/>
+                                                <constraint firstItem="8Nj-mf-Vtz" firstAttribute="top" secondItem="7NB-KA-rzi" secondAttribute="top" constant="8" id="u1F-8o-trL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="houseImageView" destination="VRG-Hf-3GC" id="uNd-gx-GKV"/>
-                                            <outlet property="houseNameLabel" destination="Zqk-yc-Hk3" id="bag-Xf-2XM"/>
-                                            <segue destination="hbV-eW-1DD" kind="show" id="eRL-9Q-vrC"/>
+                                            <outlet property="houseIconImageView" destination="5EV-oa-4qf" id="fCa-Fn-96S"/>
+                                            <outlet property="houseNameLabel" destination="8Nj-mf-Vtz" id="lOP-5m-A0g"/>
+                                            <outlet property="houseRegionLabel" destination="m1k-xo-UKz" id="Fui-o3-Rbi"/>
+                                            <outlet property="houseWordsLabel" destination="7Hg-D3-UFP" id="Gfe-xg-vxq"/>
+                                            <segue destination="hbV-eW-1DD" kind="show" id="QUv-Or-8Bn"/>
                                         </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="ggI-gg-j5I" firstAttribute="top" secondItem="tnb-2Q-MTA" secondAttribute="top" id="7a7-6f-V7m"/>
-                            <constraint firstItem="sfQ-yi-Gdt" firstAttribute="top" secondItem="ggI-gg-j5I" secondAttribute="bottom" id="ftx-bm-ROq"/>
-                            <constraint firstAttribute="trailing" secondItem="ggI-gg-j5I" secondAttribute="trailing" id="oge-kf-h5c"/>
-                            <constraint firstItem="ggI-gg-j5I" firstAttribute="leading" secondItem="tnb-2Q-MTA" secondAttribute="leading" id="qan-XX-Ym1"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BIR-xU-jUS"/>
                     <connections>
-                        <outlet property="collectionView" destination="ggI-gg-j5I" id="hmC-il-A3b"/>
+                        <outlet property="tableView" destination="6jb-Fy-ZGt" id="axP-02-BkN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfm-8B-Vyo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -282,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JuY-YB-Z3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="-271.21439280359823"/>
+            <point key="canvasLocation" x="1529" y="-271"/>
         </scene>
         <!--Houses-->
         <scene sceneID="QKT-M7-MN8">
@@ -309,5 +318,6 @@
     <resources>
         <image name="Castle" width="27" height="28"/>
         <image name="Stark" width="119" height="119"/>
+        <image name="castle-dark" width="27" height="28"/>
     </resources>
 </document>
