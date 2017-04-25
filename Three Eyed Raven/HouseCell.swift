@@ -23,6 +23,7 @@ class HouseCell: UITableViewCell {
             houseIconImageView.isHidden = false
         }
         self.selectionStyle = .none
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

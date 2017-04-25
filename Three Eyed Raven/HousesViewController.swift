@@ -25,6 +25,8 @@ class HousesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.navigationItem.titleView = searchBar
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 40
         self.tableView.alwaysBounceVertical = true
         let realm = try! Realm()
         self.storedHouses = Array(realm.objects(RealmHouse.self).sorted(byKeyPath: "name"))
