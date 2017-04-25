@@ -9,9 +9,10 @@
 import UIKit
 import RealmSwift
 
-class HousesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class HousesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var tableView: UITableView!
     let searchBar = UISearchBar()
     let tabBar = UITabBar()
     var storedHouses: [RealmHouse] = []
@@ -22,9 +23,9 @@ class HousesViewController: UIViewController, UICollectionViewDelegate, UICollec
         super.viewDidLoad()
         searchBar.delegate = self
         self.navigationItem.titleView = searchBar
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        self.collectionView.alwaysBounceVertical = true
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView.alwaysBounceVertical = true
         let realm = try! Realm()
         self.storedHouses = Array(realm.objects(RealmHouse.self).sorted(byKeyPath: "name"))
         fetchHouses()
@@ -33,23 +34,25 @@ class HousesViewController: UIViewController, UICollectionViewDelegate, UICollec
     func fetchHouses() {
         GoTClient.get(houses: storedHouses, from: houseIndex, success: { (houses: [House]) in
             self.houses += houses
-            self.collectionView.reloadData()
+            self.tableView.reloadData()
         }) { 
             print("failed to fetch houses")
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return houses.count
     }
     
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HouseCell", for: indexPath) as! HouseCell
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HouseCell", for: indexPath) as! HouseCell
         let house = houses[indexPath.row]
         cell.houseNameLabel.text = house.name
+        cell.houseWordsLabel.text = house.words
+        cell.houseRegionLabel.text = house.region
         return cell
     }
-    
     
 
     override func didReceiveMemoryWarning() {
@@ -65,7 +68,7 @@ class HousesViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         let houseDetailVC = segue.destination as! HouseDetailViewController
-        let indexPath = self.collectionView.indexPath(for: sender as! UICollectionViewCell)
+        let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)
         let house = houses[(indexPath?.row)!]
         houseDetailVC.house = house
     }

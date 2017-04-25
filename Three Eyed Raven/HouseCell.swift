@@ -2,21 +2,33 @@
 //  HouseCell.swift
 //  Three Eyed Raven
 //
-//  Created by Fiona Thompson on 3/28/17.
+//  Created by William Huang on 4/25/17.
 //
 //
 
 import UIKit
 
-class HouseCell: UICollectionViewCell {
-    
-    @IBOutlet weak var houseImageView: UIImageView!
+class HouseCell: UITableViewCell {
+
     @IBOutlet weak var houseNameLabel: UILabel!
+    @IBOutlet weak var houseWordsLabel: UILabel!
+    @IBOutlet weak var houseRegionLabel: UILabel!
+    @IBOutlet weak var houseIconImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        houseImageView.layer.cornerRadius = 3
-        houseImageView.clipsToBounds = true
+        if houseRegionLabel.text == nil {
+            houseIconImageView.isHidden = true
+        } else {
+            houseIconImageView.isHidden = false
+        }
+        self.selectionStyle = .none
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
     }
 
 }

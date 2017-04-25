@@ -14,6 +14,7 @@
 		268956841EA30C880025CD7A /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268956831EA30C880025CD7A /* InfiniteScrollActivityView.swift */; };
 		26E06E011EAD518C0000C01D /* RealmCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E06E001EAD518C0000C01D /* RealmCharacter.swift */; };
 		26E06E0D1EADB24D0000C01D /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E06E0C1EADB24D0000C01D /* AutoCompleteTextField.swift */; };
+		26E06E0F1EAFD7030000C01D /* HouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E06E0E1EAFD7030000C01D /* HouseCell.swift */; };
 		26EBA9011E93398B002018F4 /* GoTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EBA9001E93398B002018F4 /* GoTClient.swift */; };
 		5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2035D91E68F6530035BDF0 /* AppDelegate.swift */; };
 		5F2035DF1E68F6530035BDF0 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2035DD1E68F6530035BDF0 /* Characters.storyboard */; };
@@ -23,7 +24,6 @@
 		5FB100971E898BFB00EC988F /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB100961E898BFB00EC988F /* CharacterCell.swift */; };
 		5FB1009A1E8AE93700EC988F /* Houses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB100991E8AE93700EC988F /* Houses.storyboard */; };
 		5FB1009E1E8AE9B100EC988F /* HousesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1009D1E8AE9B100EC988F /* HousesViewController.swift */; };
-		5FB100A01E8AF3EF00EC988F /* HouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1009F1E8AF3EF00EC988F /* HouseCell.swift */; };
 		5FB100A21E8AFF9200EC988F /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB100A11E8AFF9200EC988F /* TabBar.storyboard */; };
 		5FCAA1271E9441FD00F60C95 /* HouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCAA1261E9441FD00F60C95 /* HouseDetailViewController.swift */; };
 		5FFB966A1E933806000AE1E5 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB96691E933806000AE1E5 /* CharacterDetailViewController.swift */; };
@@ -38,6 +38,7 @@
 		268956831EA30C880025CD7A /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
 		26E06E001EAD518C0000C01D /* RealmCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCharacter.swift; sourceTree = "<group>"; };
 		26E06E0C1EADB24D0000C01D /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
+		26E06E0E1EAFD7030000C01D /* HouseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseCell.swift; sourceTree = "<group>"; };
 		26EBA9001E93398B002018F4 /* GoTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoTClient.swift; sourceTree = "<group>"; };
 		5F2035D61E68F6530035BDF0 /* Three Eyed Raven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Three Eyed Raven.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2035D91E68F6530035BDF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		5FB100961E898BFB00EC988F /* CharacterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		5FB100991E8AE93700EC988F /* Houses.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Houses.storyboard; sourceTree = "<group>"; };
 		5FB1009D1E8AE9B100EC988F /* HousesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousesViewController.swift; sourceTree = "<group>"; };
-		5FB1009F1E8AF3EF00EC988F /* HouseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseCell.swift; sourceTree = "<group>"; };
 		5FB100A11E8AFF9200EC988F /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		5FCAA1261E9441FD00F60C95 /* HouseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseDetailViewController.swift; sourceTree = "<group>"; };
 		5FFB96691E933806000AE1E5 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
@@ -107,8 +107,8 @@
 		267B23031E91F392003D6786 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				26E06E0E1EAFD7030000C01D /* HouseCell.swift */,
 				5FB100961E898BFB00EC988F /* CharacterCell.swift */,
-				5FB1009F1E8AF3EF00EC988F /* HouseCell.swift */,
 				268956831EA30C880025CD7A /* InfiniteScrollActivityView.swift */,
 			);
 			name = Views;
@@ -333,9 +333,9 @@
 				26E06E011EAD518C0000C01D /* RealmCharacter.swift in Sources */,
 				5FB100951E898B3800EC988F /* CharactersViewController.swift in Sources */,
 				5FB100971E898BFB00EC988F /* CharacterCell.swift in Sources */,
-				5FB100A01E8AF3EF00EC988F /* HouseCell.swift in Sources */,
 				5FFB966A1E933806000AE1E5 /* CharacterDetailViewController.swift in Sources */,
 				5FB1009E1E8AE9B100EC988F /* HousesViewController.swift in Sources */,
+				26E06E0F1EAFD7030000C01D /* HouseCell.swift in Sources */,
 				2622DFCA1EAD466400D6352F /* RealmHouse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
