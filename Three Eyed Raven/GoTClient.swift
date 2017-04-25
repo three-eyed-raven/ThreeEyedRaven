@@ -99,9 +99,8 @@ class GoTClient: NSObject {
             photosGroup.enter()
             let photoBaseUrl = "https://api.cognitive.microsoft.com/bing/v5.0/images/search"
             let parameters: Parameters = [
-                "q": "\((character.playedBy?.first)!) Game of Thrones picture",
-                "size": "small",
-                "aspect": "square"
+                "q": "\((character.playedBy?.first)!) \(character.name!) Game of Thrones",
+                "size": "medium"
             ]
             let headers: HTTPHeaders = [
                 "Ocp-Apim-Subscription-Key": "e6f86299db044621b6a632f383c03624",
