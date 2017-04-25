@@ -104,7 +104,7 @@ class GoTClient: NSObject {
                 "aspect": "square"
             ]
             let headers: HTTPHeaders = [
-                "Ocp-Apim-Subscription-Key": "ba829953bc8245a7a0cd5b846d76443a",
+                "Ocp-Apim-Subscription-Key": "e6f86299db044621b6a632f383c03624",
                 "Accept": "application/json"
             ]
             print("Starting request for \(character.name)")
