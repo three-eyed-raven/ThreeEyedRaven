@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2622DFCA1EAD466400D6352F /* RealmHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622DFC91EAD466400D6352F /* RealmHouse.swift */; };
 		26302C0F1E8B1F6A00AB7506 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26302C0E1E8B1F6A00AB7506 /* UIColorExtension.swift */; };
 		267B23061E91F3B3003D6786 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267B23051E91F3B3003D6786 /* Character.swift */; };
 		267B23081E91F4AD003D6786 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267B23071E91F4AD003D6786 /* House.swift */; };
 		268956841EA30C880025CD7A /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268956831EA30C880025CD7A /* InfiniteScrollActivityView.swift */; };
+		26E06E011EAD518C0000C01D /* RealmCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E06E001EAD518C0000C01D /* RealmCharacter.swift */; };
+		26E06E0D1EADB24D0000C01D /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E06E0C1EADB24D0000C01D /* AutoCompleteTextField.swift */; };
 		26EBA9011E93398B002018F4 /* GoTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EBA9001E93398B002018F4 /* GoTClient.swift */; };
 		5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2035D91E68F6530035BDF0 /* AppDelegate.swift */; };
 		5F2035DF1E68F6530035BDF0 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2035DD1E68F6530035BDF0 /* Characters.storyboard */; };
@@ -28,10 +31,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2622DFC91EAD466400D6352F /* RealmHouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHouse.swift; sourceTree = "<group>"; };
 		26302C0E1E8B1F6A00AB7506 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		267B23051E91F3B3003D6786 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		267B23071E91F4AD003D6786 /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		268956831EA30C880025CD7A /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
+		26E06E001EAD518C0000C01D /* RealmCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCharacter.swift; sourceTree = "<group>"; };
+		26E06E0C1EADB24D0000C01D /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
 		26EBA9001E93398B002018F4 /* GoTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoTClient.swift; sourceTree = "<group>"; };
 		5F2035D61E68F6530035BDF0 /* Three Eyed Raven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Three Eyed Raven.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2035D91E68F6530035BDF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +87,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2622DFC81EAD464B00D6352F /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				2622DFC91EAD466400D6352F /* RealmHouse.swift */,
+				26E06E001EAD518C0000C01D /* RealmCharacter.swift */,
+			);
+			name = RealmModels;
+			sourceTree = "<group>";
+		};
 		26302C0D1E8B1F5B00AB7506 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +121,14 @@
 				267B23071E91F4AD003D6786 /* House.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		26E06E0B1EADB24D0000C01D /* AutoCompleteTextField */ = {
+			isa = PBXGroup;
+			children = (
+				26E06E0C1EADB24D0000C01D /* AutoCompleteTextField.swift */,
+			);
+			path = AutoCompleteTextField;
 			sourceTree = "<group>";
 		};
 		26EBA8FF1E93396D002018F4 /* API */ = {
@@ -137,6 +160,8 @@
 		5F2035D81E68F6530035BDF0 /* Three Eyed Raven */ = {
 			isa = PBXGroup;
 			children = (
+				26E06E0B1EADB24D0000C01D /* AutoCompleteTextField */,
+				2622DFC81EAD464B00D6352F /* RealmModels */,
 				26EBA8FF1E93396D002018F4 /* API */,
 				267B23041E91F3A0003D6786 /* Models */,
 				267B23031E91F392003D6786 /* Views */,
@@ -303,12 +328,15 @@
 				26302C0F1E8B1F6A00AB7506 /* UIColorExtension.swift in Sources */,
 				5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */,
 				267B23081E91F4AD003D6786 /* House.swift in Sources */,
+				26E06E0D1EADB24D0000C01D /* AutoCompleteTextField.swift in Sources */,
 				267B23061E91F3B3003D6786 /* Character.swift in Sources */,
+				26E06E011EAD518C0000C01D /* RealmCharacter.swift in Sources */,
 				5FB100951E898B3800EC988F /* CharactersViewController.swift in Sources */,
 				5FB100971E898BFB00EC988F /* CharacterCell.swift in Sources */,
 				5FB100A01E8AF3EF00EC988F /* HouseCell.swift in Sources */,
 				5FFB966A1E933806000AE1E5 /* CharacterDetailViewController.swift in Sources */,
 				5FB1009E1E8AE9B100EC988F /* HousesViewController.swift in Sources */,
+				2622DFCA1EAD466400D6352F /* RealmHouse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 853049AF3EB486BA6191EA1F /* Pods-Three Eyed Raven.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KDGWDMD53Y;
 				INFOPLIST_FILE = "Three Eyed Raven/Info.plist";
@@ -443,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B7E6CF86B619F53F47A6DF1A /* Pods-Three Eyed Raven.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KDGWDMD53Y;
 				INFOPLIST_FILE = "Three Eyed Raven/Info.plist";

@@ -17,6 +17,7 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var charcterMotherLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var characterImageView: UIImageView!
+    @IBOutlet weak var characterBirthdateLabel: UILabel!
     var character: Character?
     
     override func viewDidLoad() {
@@ -28,6 +29,8 @@ class CharacterDetailViewController: UIViewController {
         if let imageUrl = character?.imageUrl {
             self.characterImageView.setImageWith(imageUrl)
         }
+        self.houseNameLabel.text = character?.house?.name
+        self.characterBirthdateLabel.text = character?.birthDate
     }
 
     override func didReceiveMemoryWarning() {

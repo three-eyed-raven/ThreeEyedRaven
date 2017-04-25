@@ -10,82 +10,118 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import SwiftyJSON
+import RealmSwift
+
+let MAXCHARACTERPAGE = 43
 
 class GoTClient: NSObject {
     static let baseUrl = "https://www.anapioficeandfire.com/api/"
     static var page = 1
     
-    class func getCharacters(success: @escaping ([Character]) -> (), failure: @escaping () -> ()) {
-        var charactersArray: [Character] = []
-        let endpoint = "characters?page=\(page)&pageSize=50"
-        page += 1
-        let charactersUrl = URL(string: "\(baseUrl)\(endpoint)")
-        guard let url = charactersUrl else {
+    class func downloadCharacters(success: @escaping () -> (), failure: @escaping () -> ()) {
+        let realm = try! Realm()
+        var url = "\(baseUrl)characters?pageSize=50&page=1"
+        var responsesReceived = 0
+
+        for i in 1...MAXCHARACTERPAGE {
+            Alamofire.request(url).responseJSON { (response) in
+                guard let responseValue = response.value else {
+                    failure()
+                    return
+                }
+                let charactersJson = JSON(responseValue)
+                
+                for characterJson in charactersJson.array! {
+                    let character = RealmCharacter()
+                    let name = (characterJson["name"].string)!
+                    let playedBy = (characterJson["playedBy"].array)!
+                    // Save only characters who have a name and an associated actor
+                    if (!name.isEmpty && !playedBy.isEmpty) {
+                        character.name = (characterJson["name"].string)!
+                        character.urlString = (characterJson["url"].string)!
+                        try! realm.write {
+                            realm.add(character)
+                        }
+                    }
+                }
+                responsesReceived += 1
+                if responsesReceived == MAXCHARACTERPAGE {
+                    success()
+                }
+                
+            }
+            url = "\(baseUrl)characters?pageSize=50&page=\(i)"
+        }
+    }
+    
+    class func get(characters: [RealmCharacter], from startIndex: Int, success: @escaping ([Character]) -> (), failure: @escaping () -> ()) {
+        let charactersGroup = DispatchGroup()
+        if startIndex >= characters.count {
             failure()
             return
         }
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        let task: URLSessionDataTask = session.dataTask(with: request as URLRequest,completionHandler: { (dataOrNil, response, error) in
-            if let data = dataOrNil {
-                if let responseArray = try! JSONSerialization.jsonObject(with: data, options:[]) as? [Dictionary<String, Any>] {
-                    for dictionary in responseArray {
-                        let name = dictionary["name"] as! String
-                        let playedBy = dictionary["playedBy"] as! [String]
-                        if !name.isEmpty && !playedBy.isEmpty {
-                            let c = Character(dictionary: dictionary)
-                            charactersArray.append(c)
-                        }
-                    }
-                    for character in charactersArray {
-                        setHouse(for: character, success: { 
-                            
-                        }, failure: { 
-                            
-                        })
-                    }
-                    getCharacterPhoto(characters: charactersArray, success: {
-                        success(charactersArray)
-                    }, failure: { 
-                        
-                    })
-                } else {
-                    failure()
+        var charactersArray: [Character] = []
+        for i in startIndex...startIndex+10 {
+            charactersGroup.enter()
+            // The end of the array has been reached so we just return the characters collected so far
+            if i == characters.count {
+                success(charactersArray)
+                return
+            }
+            guard let url = URL(string: characters[i].urlString) else {
+                continue
+            }
+            print("fetching character at index \(i)")
+            Alamofire.request(url).responseJSON { (response) in
+                print("got a response")
+                if let responseValue = response.value {
+                    let json = JSON(responseValue)
+                    let character = Character(json: json)
+                    charactersArray.append(character)
+                    charactersGroup.leave()
                 }
             }
-        })
-        task.resume()
+        }
+        charactersGroup.notify(queue: .main) {
+            print("Characters finished fetching")
+            success(charactersArray)
+        }
     }
     
+    
     class func getCharacterPhoto(characters: [Character], success: @escaping () -> (), failure: @escaping () -> ()) {
+        let photosGroup = DispatchGroup()
         if characters.count == 0 {
             success()
         }
         var photosReceived = 0
         for character in characters {
+            photosGroup.enter()
             let photoBaseUrl = "https://api.cognitive.microsoft.com/bing/v5.0/images/search"
             let parameters: Parameters = [
-                "q": "\((character.playedBy?.first)!) Game of Thrones picture",
-                "size": "small",
-                "aspect": "square"
+                "q": "\((character.playedBy?.first)!) \(character.name!) Game of Thrones",
+                "size": "medium"
             ]
             let headers: HTTPHeaders = [
-                "Ocp-Apim-Subscription-Key": "ba829953bc8245a7a0cd5b846d76443a",
+                "Ocp-Apim-Subscription-Key": "e6f86299db044621b6a632f383c03624",
                 "Accept": "application/json"
             ]
+            print("Starting request for \(character.name)")
             Alamofire.request(photoBaseUrl, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
                 photosReceived += 1
-                let json = JSON(response.value)
+                photosGroup.leave()
+                let json = JSON(response.value!)
                 guard let imageUrlString = json["value"][0]["contentUrl"].string else {
                     return
                 }
                 if let imageUrl = URL(string: imageUrlString) {
                     character.imageUrl = imageUrl
                 }
-                if (photosReceived == characters.count) {
-                    success()
-                }
             }
+        }
+        photosGroup.notify(queue: .main) {
+            print("finished all requests")
+            success()
         }
     }
     
@@ -121,7 +157,7 @@ class GoTClient: NSObject {
                 if let responseArray = try! JSONSerialization.jsonObject(with: data, options:[]) as? [Dictionary<String, Any>] {
                     var characters: [Character] = []
                     for dictionary in responseArray {
-                        characters.append(Character(dictionary: dictionary))
+                        //characters.append(Character(dictionary: dictionary))
                     }
                     success(characters)
                 } else {
@@ -148,7 +184,7 @@ class GoTClient: NSObject {
                     print("RESPONSE: \(responseArray)")
                     var houses: [House] = []
                     for dictionary in responseArray {
-                        houses.append(House(dictionary: dictionary))
+                        // houses.append(House(dictionary: dictionary))
                     }
                     success(houses)
                 } else {
