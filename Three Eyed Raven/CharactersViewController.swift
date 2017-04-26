@@ -28,8 +28,10 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
-        tabBar.tintColor = UIColor.darkGray
-        self.navigationItem.titleView = searchBar
+        
+        //tabBar.tintColor = UIColor.darkGray
+        //self.navigationItem.titleView = searchBar
+        setNavigationBarButtons()
         
         // Set up Infinite Scroll loading indicator
         let frame = CGRect(x: 0, y: tableView.contentSize.height, width: tableView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
@@ -49,6 +51,22 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         }) { 
             print("Error downloading characters")
         }
+    }
+    
+    func setNavigationBarButtons() {
+        let logoImage = UIImage(named: "TER Icon")
+        
+        let logoView = UIImageView(frame: CGRect(x: 0, y: 0, width: 22, height: 22))
+        logoView.image = logoImage
+        logoView.contentMode = .scaleAspectFit
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 22, height: 22))
+        logoView.frame = titleView.bounds
+        titleView.addSubview(logoView)
+        
+        let searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action: nil)
+        
+        self.navigationItem.rightBarButtonItem = searchButton
+        self.navigationItem.titleView = titleView
     }
     
     func fetchCharacters() {

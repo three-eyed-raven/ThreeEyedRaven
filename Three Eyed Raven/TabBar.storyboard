@@ -15,18 +15,18 @@
                 <tabBarController id="TEa-OQ-xLO" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="A5A-G6-xnd">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="A5A-G6-xnd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.7803921568627451" green="0.60784313725490191" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="rBU-gE-ehf" kind="relationship" relationship="viewControllers" id="7Ki-Yg-drT"/>
                         <segue destination="t6o-Cq-CbP" kind="relationship" relationship="viewControllers" id="pYc-Pm-3bM"/>
-                        <segue destination="0kv-PX-LDD" kind="relationship" relationship="viewControllers" id="whc-Mc-luo"/>
-                        <segue destination="ygh-Mq-cDd" kind="relationship" relationship="viewControllers" id="WNL-Cy-vOk"/>
-                        <segue destination="h5e-k8-FGF" kind="relationship" relationship="viewControllers" id="O6f-Uz-d7i"/>
+                        <segue destination="0kv-PX-LDD" kind="relationship" relationship="viewControllers" id="ooA-7O-soa"/>
+                        <segue destination="ygh-Mq-cDd" kind="relationship" relationship="viewControllers" id="byR-f8-gSp"/>
+                        <segue destination="h5e-k8-FGF" kind="relationship" relationship="viewControllers" id="YJo-cM-4EM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nK2-9s-HD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -41,7 +41,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7GQ-EB-eWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-415" y="-86"/>
+            <point key="canvasLocation" x="-474" y="19"/>
         </scene>
         <!--HousesNavigationController-->
         <scene sceneID="LDN-b0-Va8">
@@ -51,7 +51,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N0A-e7-ptt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57" y="-86"/>
+            <point key="canvasLocation" x="-100" y="19"/>
         </scene>
         <!--CameraNavigationController-->
         <scene sceneID="s9m-Cv-co3">
@@ -61,7 +61,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQO-UK-mKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="289" y="-86"/>
+            <point key="canvasLocation" x="257" y="19"/>
         </scene>
         <!--SettingsNavigationController-->
         <scene sceneID="FeB-el-8j4">
@@ -71,7 +71,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvb-SW-krc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="-86"/>
+            <point key="canvasLocation" x="956" y="19"/>
         </scene>
         <!--MapNavigationController-->
         <scene sceneID="vqf-1f-dCW">
@@ -81,7 +81,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xk-Za-FK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="617" y="-86"/>
+            <point key="canvasLocation" x="614" y="19"/>
         </scene>
     </scenes>
 </document>
