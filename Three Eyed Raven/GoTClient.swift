@@ -131,7 +131,7 @@ class GoTClient: NSObject {
             return
         }
         var housesArray: [House] = []
-        for i in startIndex...startIndex+10 {
+        for i in startIndex..<houses.count {
             housesGroup.enter()
             // The end of the array has been reached so we just return the houses collected so far
             if i == houses.count {
