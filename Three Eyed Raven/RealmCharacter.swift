@@ -12,6 +12,7 @@ import RealmSwift
 class RealmCharacter: Object {
     dynamic var name = ""
     dynamic var urlString = ""
+    dynamic var playedBy = ""
     
     override static func indexedProperties() -> [String] {
         return ["name"]

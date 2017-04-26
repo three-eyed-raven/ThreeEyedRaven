@@ -11,9 +11,11 @@ import UIKit
 class CameraViewController: UIViewController {
     
     var image: UIImage?
+    @IBOutlet weak var displayLabel: UILabel!
+    @IBOutlet weak var cameraButton: UIButton!
+    let vc = UIImagePickerController()
     
     override func viewWillAppear(_ animated: Bool) {
-        let vc = UIImagePickerController()
         vc.delegate = self
         vc.allowsEditing = true
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -21,12 +23,20 @@ class CameraViewController: UIViewController {
         } else {
             vc.sourceType = .photoLibrary
         }
-        
-        self.present(vc, animated: true, completion: nil)
+
+        if displayLabel.text != nil {
+            
+        } else {
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func cameraButtonTapped(_ sender: Any) {
+        self.present(vc, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,9 +66,9 @@ extension CameraViewController: UIImagePickerControllerDelegate, UINavigationCon
         // Do something with the images (based on your use case)
         self.image = editedImage
         GoTClient.getCharacter(from: editedImage, success: { (character: Character) in
-            
+            self.displayLabel.text = "\(character.name!) played by \((character.playedBy?.first)!)"
         }) { 
-            
+            self.displayLabel.text = "Character could not be recognized"
         }
         
         // Dismiss UIImagePickerController to go back to your original view controller

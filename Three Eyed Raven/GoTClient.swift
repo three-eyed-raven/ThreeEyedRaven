@@ -33,13 +33,17 @@ class GoTClient: NSObject {
                 let charactersJson = JSON(responseValue)
                 
                 for characterJson in charactersJson.array! {
-                    let character = RealmCharacter()
                     let name = (characterJson["name"].string)!
                     let playedBy = (characterJson["playedBy"].array)!
                     // Save only characters who have a name and an associated actor
                     if (!name.isEmpty && !playedBy.isEmpty) {
-                        character.name = (characterJson["name"].string)!
-                        character.urlString = (characterJson["url"].string)!
+                        let character = RealmCharacter(
+                            value: [
+                                "name": (characterJson["name"].string)!,
+                                "urlString": (characterJson["url"].string)!,
+                                "playedBy": (characterJson["playedBy"][0].string)!
+                            ]
+                        )
                         try! realm.write {
                             realm.add(character)
                         }
@@ -69,12 +73,10 @@ class GoTClient: NSObject {
                 let housesJson = JSON(responseValue)
                 
                 for houseJson in housesJson.array! {
-                    let house = RealmHouse()
                     let name = (houseJson["name"].string)!
                     // Save only houses that have a name
                     if (!name.isEmpty) {
-                        house.name = (houseJson["name"].string)!
-                        house.urlString = (houseJson["url"].string)!
+                        let house = RealmHouse(value: ["name": (houseJson["name"].string)!, "urlString": (houseJson["url"].string)!])
                         print("Storing house name: \(house.name) | url: \(house.urlString)")
                         try! realm.write {
                             realm.add(house)
@@ -101,8 +103,8 @@ class GoTClient: NSObject {
             charactersGroup.enter()
             // The end of the array has been reached so we just return the characters collected so far
             if i == characters.count {
-                success(charactersArray)
-                return
+                charactersGroup.leave()
+                break
             }
             guard let url = URL(string: characters[i].urlString) else {
                 continue
@@ -215,21 +217,12 @@ class GoTClient: NSObject {
     }
     
     class func getCharacter(from image: UIImage, success: @escaping (Character) -> (), failure: @escaping () -> ()) {
+        let realm = try! Realm()
         let photoBaseUrl = "https://westus.api.cognitive.microsoft.com/vision/v1.0/analyze?details=celebrities&language=en"
         let headers: HTTPHeaders = [
             "Ocp-Apim-Subscription-Key": "9344a729bc8845bfb9175b49e81e9be5",
             "Content-Type": "multipart/form-data"
         ]
-//        print("Starting request for photo")
-//        
-//        Alamofire.request(photoBaseUrl, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
-//            let json = JSON(response.value!)
-//            print("🔥🔥🔥🔥\(json)")
-//            guard let resultArray = json["categories"]["detail"]["celebrities"].array else {
-//                return
-//            }
-//            print(resultArray)
-//        }
         let imgData = UIImageJPEGRepresentation(image, 0.2)!
         
         let parameters = ["name": "image"]
@@ -252,9 +245,19 @@ class GoTClient: NSObject {
                         let photoType = json["categories"][0]["name"].string
                         let celebrities = json["categories"][0]["detail"]["celebrities"]
                         if photoType == "people_" && celebrities.isEmpty == false {
+                            let name = celebrities[0]["name"]
                             print(celebrities[0]["name"])
+                            let characterResult = realm.objects(RealmCharacter.self).filter("playedBy = '\(name)'")
+                            if !characterResult.isEmpty {
+                                get(characters: characterResult.reversed(), from: 0, success: { (characters: [Character]) in
+                                    success(characters.first!)
+                                }, failure: { 
+                                    failure()
+                                })
+                            }
                         } else {
                             print("Person not recognized")
+                            failure()
                         }
                     }
                 }
