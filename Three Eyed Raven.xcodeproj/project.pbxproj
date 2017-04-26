@@ -18,6 +18,7 @@
 		26E06E111EAFE03B0000C01D /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E06E101EAFE03B0000C01D /* Camera.storyboard */; };
 		26E06E131EAFE0420000C01D /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E06E121EAFE0420000C01D /* Map.storyboard */; };
 		26E06E151EAFE04A0000C01D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E06E141EAFE04A0000C01D /* Settings.storyboard */; };
+		26E06E171EB027E50000C01D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E06E161EB027E50000C01D /* CameraViewController.swift */; };
 		26EBA9011E93398B002018F4 /* GoTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EBA9001E93398B002018F4 /* GoTClient.swift */; };
 		5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2035D91E68F6530035BDF0 /* AppDelegate.swift */; };
 		5F2035DF1E68F6530035BDF0 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2035DD1E68F6530035BDF0 /* Characters.storyboard */; };
@@ -45,6 +46,7 @@
 		26E06E101EAFE03B0000C01D /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		26E06E121EAFE0420000C01D /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		26E06E141EAFE04A0000C01D /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		26E06E161EB027E50000C01D /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		26EBA9001E93398B002018F4 /* GoTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoTClient.swift; sourceTree = "<group>"; };
 		5F2035D61E68F6530035BDF0 /* Three Eyed Raven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Three Eyed Raven.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2035D91E68F6530035BDF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				5FB1009D1E8AE9B100EC988F /* HousesViewController.swift */,
 				5FFB96691E933806000AE1E5 /* CharacterDetailViewController.swift */,
 				5FCAA1261E9441FD00F60C95 /* HouseDetailViewController.swift */,
+				26E06E161EB027E50000C01D /* CameraViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				5FB100971E898BFB00EC988F /* CharacterCell.swift in Sources */,
 				5FFB966A1E933806000AE1E5 /* CharacterDetailViewController.swift in Sources */,
 				5FB1009E1E8AE9B100EC988F /* HousesViewController.swift in Sources */,
+				26E06E171EB027E50000C01D /* CameraViewController.swift in Sources */,
 				26E06E0F1EAFD7030000C01D /* HouseCell.swift in Sources */,
 				2622DFCA1EAD466400D6352F /* RealmHouse.swift in Sources */,
 			);

@@ -214,6 +214,58 @@ class GoTClient: NSObject {
         }
     }
     
+    class func getCharacter(from image: UIImage, success: @escaping (Character) -> (), failure: @escaping () -> ()) {
+        let photoBaseUrl = "https://westus.api.cognitive.microsoft.com/vision/v1.0/analyze?details=celebrities&language=en"
+        let headers: HTTPHeaders = [
+            "Ocp-Apim-Subscription-Key": "9344a729bc8845bfb9175b49e81e9be5",
+            "Content-Type": "multipart/form-data"
+        ]
+//        print("Starting request for photo")
+//        
+//        Alamofire.request(photoBaseUrl, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+//            let json = JSON(response.value!)
+//            print("🔥🔥🔥🔥\(json)")
+//            guard let resultArray = json["categories"]["detail"]["celebrities"].array else {
+//                return
+//            }
+//            print(resultArray)
+//        }
+        let imgData = UIImageJPEGRepresentation(image, 0.2)!
+        
+        let parameters = ["name": "image"]
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(imgData, withName: "fileset",fileName: "file.jpg", mimeType: "image/jpg")
+            for (key, value) in parameters {
+                multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+            }
+        }, to: photoBaseUrl, method: .post, headers: headers) { (result) in
+            switch result {
+            case .success(let upload, _, _):
+                
+                upload.uploadProgress(closure: { (progress) in
+                    print("Upload Progress: \(progress.fractionCompleted)")
+                })
+                
+                upload.responseJSON { response in
+                    if let responseValue = response.result.value {
+                        let json = JSON(responseValue)
+                        let photoType = json["categories"][0]["name"].string
+                        let celebrities = json["categories"][0]["detail"]["celebrities"]
+                        if photoType == "people_" && celebrities.isEmpty == false {
+                            print(celebrities[0]["name"])
+                        } else {
+                            print("Person not recognized")
+                        }
+                    }
+                }
+                
+            case .failure(let encodingError):
+                print(encodingError)
+            }
+        }
+
+    }
+    
     class func getCharacterWith(name: String, success: @escaping ([Character]) -> (), failure: @escaping () -> ()) {
         let nameEncoded = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let endpoint = "characters?name=\(nameEncoded!)"
