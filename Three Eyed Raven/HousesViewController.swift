@@ -22,7 +22,7 @@ class HousesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        self.navigationItem.titleView = searchBar
+        //self.navigationItem.titleView = searchBar
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -30,7 +30,24 @@ class HousesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.alwaysBounceVertical = true
         let realm = try! Realm()
         self.storedHouses = Array(realm.objects(RealmHouse.self).sorted(byKeyPath: "name"))
+        setNavigationBarButtons()
         fetchHouses()
+    }
+    
+    func setNavigationBarButtons() {
+        let logoImage = UIImage(named: "TER Icon")
+        
+        let logoView = UIImageView(frame: CGRect(x: 0, y: 0, width: 22, height: 22))
+        logoView.image = logoImage
+        logoView.contentMode = .scaleAspectFit
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 22, height: 22))
+        logoView.frame = titleView.bounds
+        titleView.addSubview(logoView)
+        
+        let searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action: nil)
+        
+        self.navigationItem.rightBarButtonItem = searchButton
+        self.navigationItem.titleView = titleView
     }
     
     func fetchHouses() {

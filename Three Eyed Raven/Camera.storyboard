@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="neQ-YG-rme">
             <objects>
-                <viewController id="F87-X0-ri9" sceneMemberID="viewController">
+                <viewController id="F87-X0-ri9" customClass="CameraViewController" customModule="Three_Eyed_Raven" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4O0-0e-P3q"/>
                         <viewControllerLayoutGuide type="bottom" id="cLO-aH-one"/>
@@ -20,9 +20,30 @@
                     <view key="view" contentMode="scaleToFill" id="JbH-xU-3Kx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdM-uP-eKp">
+                                <rect key="frame" x="16" y="126" width="343" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rU-AR-Zrd">
+                                <rect key="frame" x="164" y="384" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="cameraButtonTapped:" destination="F87-X0-ri9" eventType="touchUpInside" id="qnU-tz-FK8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="icT-Zx-Oza"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="7rU-AR-Zrd" id="tqA-df-fdv"/>
+                        <outlet property="displayLabel" destination="YdM-uP-eKp" id="5Of-Sz-dks"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbF-b3-aZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -35,7 +56,7 @@
                     <tabBarItem key="tabBarItem" title="Camera" image="camera" id="vjg-Ov-DVe"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nf3-KM-DyU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="nf3-KM-DyU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
