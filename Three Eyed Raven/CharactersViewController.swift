@@ -14,8 +14,10 @@ import RealmSwift
 class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchTableView: UITableView!
     var characterIndex = 0
     var storedCharacters: [RealmCharacter] = []
+    var filteredCharacters: [RealmCharacter] = []
     var characters: [Character] = []
     let searchBar = UISearchBar()
     var searchButton = UIBarButtonItem()
@@ -29,14 +31,15 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         let realm = try! Realm()
         tableView.delegate = self
         tableView.dataSource = self
+        searchTableView.delegate = self
+        searchTableView.dataSource = self
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
+        searchTableView.rowHeight = UITableViewAutomaticDimension
+        searchTableView.estimatedRowHeight = 200
         
         searchBar.delegate = self
-        
-        //tabBar.tintColor = UIColor.darkGray
-        //self.navigationItem.titleView = searchBar
         setNavigationBarButtons()
         
         // Set up Infinite Scroll loading indicator
@@ -52,6 +55,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         GoTClient.downloadCharacters(success: { 
             let characters = realm.objects(RealmCharacter.self).sorted(byKeyPath: "name")
             self.storedCharacters = Array(characters)
+            self.filteredCharacters = self.storedCharacters
             MBProgressHUD.hide(for: self.tableView, animated: true)
             self.fetchCharacters()
         }) { 
@@ -102,10 +106,19 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == self.searchTableView {
+            return filteredCharacters.count
+        }
         return characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == self.searchTableView {
+            let cell = searchTableView.dequeueReusableCell(withIdentifier: "CharacterSearchCell") as! CharacterSearchCell
+            let character = filteredCharacters[indexPath.row]
+            cell.characterNameLabel.text = character.name
+            return cell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell") as! CharacterCell
         cell.characterImageView.image = UIImage(named: "stock-character-image")
         let character = characters[indexPath.row]
@@ -143,6 +156,9 @@ extension CharactersViewController: UISearchBarDelegate {
         self.navigationItem.rightBarButtonItem = nil
         self.searchBar.becomeFirstResponder()
         self.navigationItem.titleView = self.searchBar
+        self.tableView.isHidden = true
+        self.searchTableView.isHidden = false
+        self.searchTableView.reloadData()
     }
     
     public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -152,12 +168,24 @@ extension CharactersViewController: UISearchBarDelegate {
 
     }
     
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("text changing")
+        
+        filteredCharacters = searchText.isEmpty ? storedCharacters : storedCharacters.filter({(character: RealmCharacter) -> Bool in
+            let name = character.name
+            return name.range(of: searchText, options: .caseInsensitive) != nil
+        })
+        self.searchTableView.reloadData()
+    }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
         searchBar.text = ""
         searchBar.resignFirstResponder()
         self.navigationItem.titleView = self.titleView
         self.navigationItem.rightBarButtonItem = self.searchButton
+        self.tableView.isHidden = false
+        self.searchTableView.isHidden = true
     }
 }
 
