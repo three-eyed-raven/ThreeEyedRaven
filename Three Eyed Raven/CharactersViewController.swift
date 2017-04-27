@@ -123,9 +123,8 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         if (character.house == nil) {
             cell.characterHouseLabel.isHidden = true
             cell.castleImageView.isHidden = true
-            //cell.constraint1.priority = 500
+            
         } else {
-            //cell.constraint1.priority = 1000
             cell.characterHouseLabel.isHidden = false
             cell.castleImageView.isHidden = false
             cell.characterHouseLabel.text = character.house?.name
