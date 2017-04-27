@@ -79,16 +79,16 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
             for character in characters {
                 character.setHouse()
             }
-            GoTClient.getCharacterPhoto(characters: characters, success: {
+            //GoTClient.getCharacterPhoto(characters: characters, success: {
                 self.characters += characters
                 self.isMoreDataLoading = false
                 self.loadingMoreView!.stopAnimating()
                 self.tableView.reloadData()
                 MBProgressHUD.hide(for: self.tableView, animated: true)
-            }, failure: {
+            //}, failure: {
             
             
-            })
+            //})
 
         }) {
             self.isMoreDataLoading = false
@@ -111,25 +111,8 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         if let imageUrl = character.imageUrl {
             cell.characterImageView.setImageWith(imageUrl)
         }
-        if (character.culture?.isEmpty)! {
-            cell.characterCultureLabel.isHidden = true
-            cell.mapImageView.isHidden = true
-        } else {
-            cell.characterCultureLabel.isHidden = false
-            cell.mapImageView.isHidden = false
-            cell.characterCultureLabel.text = character.culture
-        }
-        
-        if (character.house == nil) {
-            cell.characterHouseLabel.isHidden = true
-            cell.castleImageView.isHidden = true
-            
-        } else {
-            cell.characterHouseLabel.isHidden = false
-            cell.castleImageView.isHidden = false
-            cell.characterHouseLabel.text = character.house?.name
-        }
-        
+        cell.characterCultureLabel.text = (character.culture?.isEmpty)! ? "Unknown" : character.culture
+        cell.characterHouseLabel.text = character.house?.name ?? "Unknown"
         cell.characterDescriptionLabel.text = character.aliases?.first
         return cell
     }

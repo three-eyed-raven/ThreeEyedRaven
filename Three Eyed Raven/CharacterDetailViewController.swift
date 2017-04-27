@@ -11,11 +11,11 @@ import UIKit
 class CharacterDetailViewController: UIViewController {
 
     
+    @IBOutlet weak var characterSpouseLabel: UILabel!
     @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var houseNameLabel: UILabel!
     @IBOutlet weak var characterFatherLabel: UILabel!
     @IBOutlet weak var charcterMotherLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterBirthdateLabel: UILabel!
     var character: Character?
@@ -29,8 +29,41 @@ class CharacterDetailViewController: UIViewController {
         if let imageUrl = character?.imageUrl {
             self.characterImageView.setImageWith(imageUrl)
         }
-        self.houseNameLabel.text = character?.house?.name
-        self.characterBirthdateLabel.text = character?.birthDate
+        self.houseNameLabel.text = character?.house?.name ?? "Unknown"
+        self.characterBirthdateLabel.text = (character?.birthDate?.isEmpty)! ? "Unknown" : character?.birthDate
+        setNavigationBar()
+        getParents()
+    }
+    
+    func setNavigationBar() {
+        let logoImage = UIImage(named: "TER Icon")
+        let logoView = UIImageView(frame: CGRect(x: 0, y: 0, width: 22, height: 22))
+        logoView.image = logoImage
+        logoView.contentMode = .scaleAspectFit
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 22, height: 22))
+        logoView.frame = titleView.bounds
+        titleView.addSubview(logoView)
+        
+        self.navigationItem.titleView = titleView
+    }
+    
+    func getParents() {
+        print("getting parents mother: \(character?.mother) | father: \(character?.father)")
+        GoTClient.getCharacter(fromUrlString: (character?.mother)!, success: { (character: Character) in
+            self.charcterMotherLabel.text = character.name
+        }) { 
+            self.charcterMotherLabel.text = "Mother Unknown"
+        }
+        GoTClient.getCharacter(fromUrlString: (character?.father)!, success: { (character: Character) in
+            self.characterFatherLabel.text = character.name
+        }) {
+            self.characterFatherLabel.text = "Father Unknown"
+        }
+        GoTClient.getCharacter(fromUrlString: (character?.spouse)!, success: { (character: Character) in
+            self.characterSpouseLabel.text = character.name
+        }) {
+            self.characterSpouseLabel.text = "Spouse Unknown"
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -216,6 +216,22 @@ class GoTClient: NSObject {
         }
     }
     
+    class func getCharacter(fromUrlString urlString: String, success: @escaping (Character) -> (), failure: @escaping () -> ()) {
+        guard let url = URL(string: urlString) else {
+            failure()
+            return
+        }
+        Alamofire.request(url).responseJSON { (response) in
+            guard let responseValue = response.value else {
+                failure()
+                return
+            }
+            let characterJson = JSON(responseValue)
+            let character = Character(json: characterJson)
+            success(character)
+        }
+    }
+    
     class func getCharacter(from image: UIImage, success: @escaping (Character) -> (), failure: @escaping () -> ()) {
         let realm = try! Realm()
         let photoBaseUrl = "https://westus.api.cognitive.microsoft.com/vision/v1.0/analyze?details=celebrities&language=en"
