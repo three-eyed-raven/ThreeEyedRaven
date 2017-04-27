@@ -14,7 +14,13 @@ class CharacterCell: UITableViewCell {
     @IBOutlet weak var characterHouseLabel: UILabel!
     @IBOutlet weak var characterDescriptionLabel: UILabel!
     @IBOutlet weak var characterImageView: UIImageView!
+    @IBOutlet weak var characterCultureLabel: UILabel!
+    @IBOutlet weak var castleImageView: UIImageView!
+    @IBOutlet weak var mapImageView: UIImageView!
     
+    @IBOutlet weak var constraint1: NSLayoutConstraint!
+    
+    @IBOutlet weak var constraint2: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
