@@ -38,23 +38,17 @@ class CharacterDetailViewController: UIViewController {
         print("getting parents mother: \(character?.mother) | father: \(character?.father)")
         GoTClient.getCharacter(fromUrlString: (character?.mother)!, success: { (character: Character) in
             self.charcterMotherLabel.text = character.name
-            print("mother success")
         }) { 
             self.charcterMotherLabel.text = "Mother Unknown"
-            print("mother fail")
         }
         GoTClient.getCharacter(fromUrlString: (character?.father)!, success: { (character: Character) in
             self.characterFatherLabel.text = character.name
-            print("father success")
         }) {
-            print("father fail")
             self.characterFatherLabel.text = "Father Unknown"
         }
         GoTClient.getCharacter(fromUrlString: (character?.spouse)!, success: { (character: Character) in
             self.characterSpouseLabel.text = character.name
-            print("spouse success")
         }) {
-            print("spouse fail")
             self.characterSpouseLabel.text = "Spouse Unknown"
         }
     }

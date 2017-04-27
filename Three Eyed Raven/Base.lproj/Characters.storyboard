@@ -140,7 +140,7 @@
         <!--Character Detail View Controller-->
         <scene sceneID="SsZ-EM-xL6">
             <objects>
-                <viewController id="ivH-o0-tdo" customClass="CharacterDetailViewController" customModule="Three_Eyed_Raven" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CharacterDetailViewController" id="ivH-o0-tdo" customClass="CharacterDetailViewController" customModule="Three_Eyed_Raven" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="01G-i2-sfT"/>
                         <viewControllerLayoutGuide type="bottom" id="jIr-Ta-9AN"/>
