@@ -18,6 +18,8 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var charcterMotherLabel: UILabel!
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterBirthdateLabel: UILabel!
+    @IBOutlet weak var characterGenderLabel: UILabel!
+    @IBOutlet weak var characterPlayedByLabel: UILabel!
     var character: Character?
     
     override func viewDidLoad() {
@@ -31,6 +33,8 @@ class CharacterDetailViewController: UIViewController {
         }
         self.houseNameLabel.text = character?.house?.name ?? "Unknown"
         self.characterBirthdateLabel.text = (character?.birthDate?.isEmpty)! ? "Unknown" : character?.birthDate
+        self.characterGenderLabel.text = (character?.gender?.isEmpty)! ? "Unknown" : character?.gender
+        self.characterPlayedByLabel.text = character?.playedBy?.first
         setNavigationBar()
         getParents()
     }
