@@ -42,6 +42,7 @@ class CameraViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBar()
     }
     
     @IBAction func cameraButtonTapped(_ sender: Any) {
@@ -51,6 +52,18 @@ class CameraViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setNavigationBar() {
+        let logoImage = UIImage(named: "TER Icon")
+        let logoView = UIImageView(frame: CGRect(x: 0, y: 0, width: 22, height: 22))
+        logoView.image = logoImage
+        logoView.contentMode = .scaleAspectFit
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 22, height: 22))
+        logoView.frame = titleView.bounds
+        titleView.addSubview(logoView)
+        
+        self.navigationItem.titleView = titleView
     }
     
 

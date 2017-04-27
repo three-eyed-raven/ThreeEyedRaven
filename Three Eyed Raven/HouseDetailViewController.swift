@@ -25,6 +25,19 @@ class HouseDetailViewController: UIViewController {
         self.houseNameLabel.text = house?.name
         self.houseRegionLabel.text = house?.region
         self.houseWordsLabel.text = house?.words
+        setNavigationBar()
+    }
+    
+    func setNavigationBar() {
+        let logoImage = UIImage(named: "TER Icon")
+        let logoView = UIImageView(frame: CGRect(x: 0, y: 0, width: 22, height: 22))
+        logoView.image = logoImage
+        logoView.contentMode = .scaleAspectFit
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 22, height: 22))
+        logoView.frame = titleView.bounds
+        titleView.addSubview(logoView)
+        
+        self.navigationItem.titleView = titleView
     }
 
     override func didReceiveMemoryWarning() {
