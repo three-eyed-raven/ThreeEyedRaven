@@ -11,11 +11,11 @@ import UIKit
 class CharacterDetailViewController: UIViewController {
 
     
+    @IBOutlet weak var characterSpouseLabel: UILabel!
     @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var houseNameLabel: UILabel!
     @IBOutlet weak var characterFatherLabel: UILabel!
     @IBOutlet weak var charcterMotherLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterBirthdateLabel: UILabel!
     var character: Character?
@@ -29,8 +29,8 @@ class CharacterDetailViewController: UIViewController {
         if let imageUrl = character?.imageUrl {
             self.characterImageView.setImageWith(imageUrl)
         }
-        self.houseNameLabel.text = character?.house?.name
-        self.characterBirthdateLabel.text = character?.birthDate
+        self.houseNameLabel.text = character?.house?.name ?? "Unknown"
+        self.characterBirthdateLabel.text = (character?.birthDate?.isEmpty)! ? "Unknown" : character?.birthDate
         getParents()
     }
     
@@ -49,6 +49,13 @@ class CharacterDetailViewController: UIViewController {
         }) {
             print("father fail")
             self.characterFatherLabel.text = "Father Unknown"
+        }
+        GoTClient.getCharacter(fromUrlString: (character?.spouse)!, success: { (character: Character) in
+            self.characterSpouseLabel.text = character.name
+            print("spouse success")
+        }) {
+            print("spouse fail")
+            self.characterSpouseLabel.text = "Spouse Unknown"
         }
     }
 

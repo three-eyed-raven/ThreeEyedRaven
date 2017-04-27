@@ -79,16 +79,16 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
             for character in characters {
                 character.setHouse()
             }
-            //GoTClient.getCharacterPhoto(characters: characters, success: {
+            GoTClient.getCharacterPhoto(characters: characters, success: {
                 self.characters += characters
                 self.isMoreDataLoading = false
                 self.loadingMoreView!.stopAnimating()
                 self.tableView.reloadData()
                 MBProgressHUD.hide(for: self.tableView, animated: true)
-            //}, failure: {
+            }, failure: {
             
             
-            //})
+            })
 
         }) {
             self.isMoreDataLoading = false
