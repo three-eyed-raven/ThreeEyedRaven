@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import MBProgressHUD
 
 class HousesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -51,9 +52,11 @@ class HousesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func fetchHouses() {
+        MBProgressHUD.showAdded(to: self.tableView, animated: true)
         GoTClient.get(houses: storedHouses, from: houseIndex, success: { (houses: [House]) in
             self.houses += houses
             self.tableView.reloadData()
+            MBProgressHUD.hide(for: self.tableView, animated: true)
         }) { 
             print("failed to fetch houses")
         }
