@@ -27,6 +27,10 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         let realm = try! Realm()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 200
+        
         searchBar.delegate = self
         
         //tabBar.tintColor = UIColor.darkGray
@@ -107,7 +111,26 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         if let imageUrl = character.imageUrl {
             cell.characterImageView.setImageWith(imageUrl)
         }
-        cell.characterHouseLabel.text = character.house?.name ?? ""
+        if (character.culture?.isEmpty)! {
+            cell.characterCultureLabel.isHidden = true
+            cell.mapImageView.isHidden = true
+        } else {
+            cell.characterCultureLabel.isHidden = false
+            cell.mapImageView.isHidden = false
+            cell.characterCultureLabel.text = character.culture
+        }
+        
+        if (character.house == nil) {
+            cell.characterHouseLabel.isHidden = true
+            cell.castleImageView.isHidden = true
+            //cell.constraint1.priority = 500
+        } else {
+            //cell.constraint1.priority = 1000
+            cell.characterHouseLabel.isHidden = false
+            cell.castleImageView.isHidden = false
+            cell.characterHouseLabel.text = character.house?.name
+        }
+        
         cell.characterDescriptionLabel.text = character.aliases?.first
         return cell
     }
