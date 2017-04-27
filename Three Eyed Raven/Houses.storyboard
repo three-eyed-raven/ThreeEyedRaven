@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,54 +22,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6jb-Fy-ZGt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6jb-Fy-ZGt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HouseCell" rowHeight="63" id="sp3-iZ-SPz" customClass="HouseCell" customModule="Three_Eyed_Raven" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="63"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HouseCell" rowHeight="100" id="sp3-iZ-SPz" customClass="HouseCell" customModule="Three_Eyed_Raven" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sp3-iZ-SPz" id="7NB-KA-rzi">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="House Stark" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nj-mf-Vtz">
-                                                    <rect key="frame" x="8" y="8" width="99" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="8" width="148" height="34"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Winter is Coming" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hg-D3-UFP">
-                                                    <rect key="frame" x="8" y="31" width="124" height="23.5"/>
+                                                    <rect key="frame" x="8" y="44" width="124" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="0.78039215689999997" green="0.60784313729999995" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="castle-dark" translatesAutoresizingMaskIntoConstraints="NO" id="5EV-oa-4qf">
-                                                    <rect key="frame" x="302" y="11" width="13" height="14"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-dark" translatesAutoresizingMaskIntoConstraints="NO" id="5EV-oa-4qf">
+                                                    <rect key="frame" x="8" y="67.5" width="20" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="14" id="IKS-qq-jqv"/>
-                                                        <constraint firstAttribute="width" constant="13" id="a67-oo-IlI"/>
+                                                        <constraint firstAttribute="height" constant="20" id="IKS-qq-jqv"/>
+                                                        <constraint firstAttribute="width" constant="20" id="a67-oo-IlI"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The North" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1k-xo-UKz">
-                                                    <rect key="frame" x="318" y="13" width="48.5" height="12"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="10"/>
+                                                    <rect key="frame" x="36" y="69.5" width="65" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="m1k-xo-UKz" secondAttribute="trailing" constant="8" id="238-KZ-dje"/>
-                                                <constraint firstItem="5EV-oa-4qf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Nj-mf-Vtz" secondAttribute="trailing" constant="8" id="3kQ-84-uVD"/>
                                                 <constraint firstItem="7Hg-D3-UFP" firstAttribute="leading" secondItem="7NB-KA-rzi" secondAttribute="leading" constant="8" id="7Dd-ck-Ac4"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Hg-D3-UFP" secondAttribute="trailing" constant="8" id="CgN-Op-q7S"/>
-                                                <constraint firstItem="m1k-xo-UKz" firstAttribute="top" secondItem="7NB-KA-rzi" secondAttribute="top" constant="13" id="G80-1v-jKb"/>
-                                                <constraint firstItem="m1k-xo-UKz" firstAttribute="leading" secondItem="5EV-oa-4qf" secondAttribute="trailing" constant="3" id="Pyj-BL-FM9"/>
-                                                <constraint firstItem="5EV-oa-4qf" firstAttribute="top" secondItem="7NB-KA-rzi" secondAttribute="top" constant="11" id="UoD-63-DKC"/>
-                                                <constraint firstAttribute="bottom" secondItem="7Hg-D3-UFP" secondAttribute="bottom" constant="8" id="efm-W8-FvJ"/>
+                                                <constraint firstItem="m1k-xo-UKz" firstAttribute="leading" secondItem="5EV-oa-4qf" secondAttribute="trailing" constant="8" id="H1h-K9-IxG"/>
+                                                <constraint firstItem="5EV-oa-4qf" firstAttribute="leading" secondItem="7NB-KA-rzi" secondAttribute="leading" constant="8" id="OmG-Uj-DvV"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="m1k-xo-UKz" secondAttribute="bottom" constant="8" id="Pwk-NI-rbr"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="8Nj-mf-Vtz" secondAttribute="trailing" constant="8" id="c1i-gg-zKR"/>
+                                                <constraint firstItem="m1k-xo-UKz" firstAttribute="top" secondItem="5EV-oa-4qf" secondAttribute="top" constant="2" id="ljK-OE-D7D"/>
                                                 <constraint firstItem="8Nj-mf-Vtz" firstAttribute="leading" secondItem="7NB-KA-rzi" secondAttribute="leading" constant="8" id="mrd-12-5Kq"/>
+                                                <constraint firstItem="5EV-oa-4qf" firstAttribute="top" secondItem="7Hg-D3-UFP" secondAttribute="bottom" constant="4" id="nTo-Ts-Tdo"/>
                                                 <constraint firstItem="7Hg-D3-UFP" firstAttribute="top" secondItem="8Nj-mf-Vtz" secondAttribute="bottom" constant="2" id="sCp-N5-N15"/>
                                                 <constraint firstItem="8Nj-mf-Vtz" firstAttribute="top" secondItem="7NB-KA-rzi" secondAttribute="top" constant="8" id="u1F-8o-trL"/>
                                             </constraints>
@@ -329,6 +330,6 @@
     <resources>
         <image name="Castle" width="27" height="28"/>
         <image name="Stark" width="119" height="119"/>
-        <image name="castle-dark" width="27" height="28"/>
+        <image name="map-dark" width="25" height="24"/>
     </resources>
 </document>
