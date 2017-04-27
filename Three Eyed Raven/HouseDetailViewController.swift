@@ -14,6 +14,8 @@ class HouseDetailViewController: UIViewController {
     @IBOutlet weak var houseNameLabel: UILabel!
     @IBOutlet weak var houseRegionLabel: UILabel!
     @IBOutlet weak var houseWordsLabel: UILabel!
+    @IBOutlet weak var houseCoatOfArmsLabel: UILabel!
+    @IBOutlet weak var coatOfArmsView: UIView!
     @IBOutlet weak var alliesCollectionView: UICollectionView!
     @IBOutlet weak var enemiesCollectionView: UICollectionView!
     @IBOutlet weak var swornMembersCollectionView: UICollectionView!
@@ -24,7 +26,8 @@ class HouseDetailViewController: UIViewController {
 
         self.houseNameLabel.text = house?.name
         self.houseRegionLabel.text = house?.region
-        self.houseWordsLabel.text = house?.words
+        self.houseWordsLabel.text = (house?.words?.isEmpty)! ? nil : "\"\((house?.words)!)\""
+        self.houseCoatOfArmsLabel.text = (house?.coatOfArms?.isEmpty)! ? "Unknown" : house?.coatOfArms
         setNavigationBar()
     }
     
@@ -55,5 +58,5 @@ class HouseDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
+
