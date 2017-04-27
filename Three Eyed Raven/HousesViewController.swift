@@ -74,7 +74,7 @@ class HousesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let house = filteredHouses[indexPath.row]
         cell.houseNameLabel.text = house.name
         cell.houseWordsLabel.text = house.words
-        cell.houseRegionLabel.text = house.region
+        cell.houseRegionLabel.text = (house.region?.isEmpty)! ? "Unknown" : house.region
         return cell
     }
     

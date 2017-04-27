@@ -105,7 +105,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell") as! CharacterCell
-        cell.characterImageView.image = UIImage(named: "Character")
+        cell.characterImageView.image = UIImage(named: "stock-character-image")
         let character = characters[indexPath.row]
         cell.characterNameLabel.text = character.name
         if let imageUrl = character.imageUrl {
