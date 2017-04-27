@@ -79,16 +79,16 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
             for character in characters {
                 character.setHouse()
             }
-            //GoTClient.getCharacterPhoto(characters: characters, success: {
+            GoTClient.getCharacterPhoto(characters: characters, success: {
                 self.characters += characters
                 self.isMoreDataLoading = false
                 self.loadingMoreView!.stopAnimating()
                 self.tableView.reloadData()
                 MBProgressHUD.hide(for: self.tableView, animated: true)
-            //}, failure: {
+            }, failure: {
             
             
-            //})
+            })
 
         }) {
             self.isMoreDataLoading = false
@@ -105,7 +105,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell") as! CharacterCell
-        cell.characterImageView.image = nil
+        cell.characterImageView.image = UIImage(named: "stock-character-image")
         let character = characters[indexPath.row]
         cell.characterNameLabel.text = character.name
         if let imageUrl = character.imageUrl {
