@@ -105,32 +105,14 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell") as! CharacterCell
-        cell.characterImageView.image = nil
+        cell.characterImageView.image = UIImage(named: "Character")
         let character = characters[indexPath.row]
         cell.characterNameLabel.text = character.name
         if let imageUrl = character.imageUrl {
             cell.characterImageView.setImageWith(imageUrl)
         }
-        if (character.culture?.isEmpty)! {
-            cell.characterCultureLabel.isHidden = true
-            cell.mapImageView.isHidden = true
-        } else {
-            cell.characterCultureLabel.isHidden = false
-            cell.mapImageView.isHidden = false
-            cell.characterCultureLabel.text = character.culture
-        }
-        
-        if (character.house == nil) {
-            cell.characterHouseLabel.isHidden = true
-            cell.castleImageView.isHidden = true
-            //cell.constraint1.priority = 500
-        } else {
-            //cell.constraint1.priority = 1000
-            cell.characterHouseLabel.isHidden = false
-            cell.castleImageView.isHidden = false
-            cell.characterHouseLabel.text = character.house?.name
-        }
-        
+        cell.characterCultureLabel.text = (character.culture?.isEmpty)! ? "Unknown" : character.culture
+        cell.characterHouseLabel.text = character.house?.name ?? "Unknown"
         cell.characterDescriptionLabel.text = character.aliases?.first
         return cell
     }
