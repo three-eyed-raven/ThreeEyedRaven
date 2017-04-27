@@ -10,14 +10,11 @@ import UIKit
 
 class HouseDetailViewController: UIViewController {
 
-    @IBOutlet weak var sigilImageView: UIImageView!
     @IBOutlet weak var houseNameLabel: UILabel!
     @IBOutlet weak var houseRegionLabel: UILabel!
     @IBOutlet weak var houseWordsLabel: UILabel!
     @IBOutlet weak var houseCoatOfArmsLabel: UILabel!
     @IBOutlet weak var coatOfArmsView: UIView!
-    @IBOutlet weak var alliesCollectionView: UICollectionView!
-    @IBOutlet weak var enemiesCollectionView: UICollectionView!
     @IBOutlet weak var swornMembersCollectionView: UICollectionView!
     var house: House?
     
@@ -28,6 +25,8 @@ class HouseDetailViewController: UIViewController {
         self.houseRegionLabel.text = house?.region
         self.houseWordsLabel.text = (house?.words?.isEmpty)! ? nil : "\"\((house?.words)!)\""
         self.houseCoatOfArmsLabel.text = (house?.coatOfArms?.isEmpty)! ? "Unknown" : house?.coatOfArms
+        swornMembersCollectionView.delegate = self
+        swornMembersCollectionView.dataSource = self
         setNavigationBar()
     }
     
@@ -60,3 +59,16 @@ class HouseDetailViewController: UIViewController {
     */
 }
 
+extension HouseDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("number of sworn members \((self.house?.swornMembers?.count)!)")
+        return (self.house?.swornMembers?.count)!
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HouseCollectionCell", for: indexPath) as! HouseCollectionCell
+        
+        return cell
+    }
+}
