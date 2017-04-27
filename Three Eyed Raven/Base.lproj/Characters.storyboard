@@ -114,7 +114,7 @@
                                             <outlet property="characterNameLabel" destination="FJO-nr-QQA" id="qfK-CS-1lI"/>
                                             <outlet property="constraint2" destination="t7Q-pN-E8t" id="9ec-oy-L1X"/>
                                             <outlet property="mapImageView" destination="na2-td-nMA" id="Bbf-jb-Zsc"/>
-                                            <segue destination="ivH-o0-tdo" kind="show" id="SN3-fV-fnx"/>
+                                            <segue destination="ivH-o0-tdo" kind="show" identifier="CharacterDetailSegue" id="SN3-fV-fnx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -145,6 +145,7 @@
                                                 <constraint firstItem="aex-Mq-WAJ" firstAttribute="leading" secondItem="ap0-gG-aQp" secondAttribute="leading" constant="8" id="q4L-Jf-Yzr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="characterNameLabel" destination="aex-Mq-WAJ" id="hJ3-0v-cAJ"/>
                                         </connections>

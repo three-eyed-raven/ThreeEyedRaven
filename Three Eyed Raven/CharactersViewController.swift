@@ -18,6 +18,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     var characterIndex = 0
     var storedCharacters: [RealmCharacter] = []
     var filteredCharacters: [RealmCharacter] = []
+    var characterForSearch: Character?
     var characters: [Character] = []
     let searchBar = UISearchBar()
     var searchButton = UIBarButtonItem()
@@ -115,6 +116,8 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == self.searchTableView {
             let cell = searchTableView.dequeueReusableCell(withIdentifier: "CharacterSearchCell") as! CharacterSearchCell
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(searchCellPressed(sender:)))
+            cell.addGestureRecognizer(tapGestureRecognizer)
             let character = filteredCharacters[indexPath.row]
             cell.characterNameLabel.text = character.name
             return cell
@@ -132,6 +135,43 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
+    func searchCellPressed(sender: UITapGestureRecognizer) {
+        MBProgressHUD.showAdded(to: self.searchTableView, animated: true)
+        let group = DispatchGroup()
+        let cell = sender.view as! CharacterSearchCell
+        if let indexPath = self.searchTableView.indexPath(for: cell) {
+            let character = filteredCharacters[indexPath.row]
+            group.enter()
+            GoTClient.getCharacter(fromUrlString: character.urlString, success: { (character: Character) in
+                self.characterForSearch = character
+                group.enter()
+                GoTClient.setHouse(for: character, success: {
+                    print("1")
+                    group.leave()
+                }, failure: {
+                    print("2")
+                    group.leave()
+                })
+                group.enter()
+                GoTClient.getCharacterPhoto(characters: [character], success: {
+                    print("3")
+                    group.leave()
+                }, failure: {
+                    print("4")
+                    group.leave()
+                })
+                group.leave()
+            }, failure: { 
+                print("Character search failed")
+            })
+        }
+        group.notify(queue: .main) {
+            
+            MBProgressHUD.hide(for: self.searchTableView, animated: true)
+            self.performSegue(withIdentifier: "CharacterDetailSegue", sender: cell)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -143,6 +183,11 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let characterDetailVC = segue.destination as! CharacterDetailViewController
+        self.searchBar.resignFirstResponder()
+
+        if ((sender as? CharacterSearchCell) != nil) {
+            characterDetailVC.character = self.characterForSearch
+        }
         if let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell) {
             let character = characters[indexPath.row]
             characterDetailVC.character = character

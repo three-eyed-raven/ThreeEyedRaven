@@ -201,6 +201,7 @@ class GoTClient: NSObject {
     
     class func setHouse(for character: Character, success: @escaping () -> (), failure: @escaping () -> ()) {
         if (character.allegiances?.isEmpty)! {
+            failure()s
             return
         }
         let houseUrl = (character.allegiances?.first)!
