@@ -17,6 +17,7 @@ class HouseDetailViewController: UIViewController {
     @IBOutlet weak var coatOfArmsView: UIView!
     @IBOutlet weak var swornMembersCollectionView: UICollectionView!
     var house: House?
+    var swornMembers: [RealmCharacter] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class HouseDetailViewController: UIViewController {
         swornMembersCollectionView.delegate = self
         swornMembersCollectionView.dataSource = self
         setNavigationBar()
+        self.swornMembers = GoTClient.getSwornMembers(by: self.house!)
     }
     
     func setNavigationBar() {
@@ -63,12 +65,13 @@ extension HouseDetailViewController: UICollectionViewDelegate, UICollectionViewD
 
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("number of sworn members \((self.house?.swornMembers?.count)!)")
-        return (self.house?.swornMembers?.count)!
+        return self.swornMembers.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HouseCollectionCell", for: indexPath) as! HouseCollectionCell
-        
+        let member = self.swornMembers[indexPath.row]
+        cell.characterNameLabel.text = member.name
         return cell
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 
 class HouseCollectionCell: UICollectionViewCell {
+    @IBOutlet weak var characterNameLabel: UILabel!
     override func awakeFromNib() {
         self.layer.cornerRadius = 3
     }

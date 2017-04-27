@@ -186,8 +186,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jon Snow" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoG-QD-Mto">
-                                                            <rect key="frame" x="8" y="30" width="59" height="15"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jon Snow" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoG-QD-Mto">
+                                                            <rect key="frame" x="8" y="8" width="55" height="15"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -198,11 +198,13 @@
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="xoG-QD-Mto" firstAttribute="leading" secondItem="HqL-1x-8XZ" secondAttribute="leading" constant="8" id="3AK-Bo-iFm"/>
-                                                    <constraint firstItem="xoG-QD-Mto" firstAttribute="centerY" secondItem="HqL-1x-8XZ" secondAttribute="centerY" id="PiD-dT-uQi"/>
-                                                    <constraint firstItem="xoG-QD-Mto" firstAttribute="top" secondItem="HqL-1x-8XZ" secondAttribute="top" constant="30" id="gbU-mp-VWu"/>
+                                                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="xoG-QD-Mto" secondAttribute="bottom" constant="8" id="3gK-ex-1Ev"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xoG-QD-Mto" secondAttribute="trailing" constant="8" id="lA3-b0-Xn4"/>
-                                                    <constraint firstItem="xoG-QD-Mto" firstAttribute="centerX" secondItem="HqL-1x-8XZ" secondAttribute="centerX" id="qSE-aT-iPa"/>
+                                                    <constraint firstItem="xoG-QD-Mto" firstAttribute="top" secondItem="HqL-1x-8XZ" secondAttribute="topMargin" id="x1r-4a-y6U"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="characterNameLabel" destination="xoG-QD-Mto" id="pPX-fW-w4S"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>

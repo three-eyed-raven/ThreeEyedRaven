@@ -160,7 +160,17 @@ class GoTClient: NSObject {
         }
     }
     
-    
+    class func getSwornMembers(by house: House) -> [RealmCharacter] {
+        let realm = try! Realm()
+        var characters: [RealmCharacter] = []
+        for memberUrlString in house.swornMembers! {
+            let memberResult = realm.objects(RealmCharacter.self).filter("urlString = '\(memberUrlString)'")
+            if !memberResult.isEmpty {
+                characters.append(memberResult.first!)
+            }
+        }
+        return characters
+    }
     
     
     class func getCharacterPhoto(characters: [Character], success: @escaping () -> (), failure: @escaping () -> ()) {
