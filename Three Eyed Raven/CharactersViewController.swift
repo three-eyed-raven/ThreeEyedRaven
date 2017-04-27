@@ -18,6 +18,8 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     var storedCharacters: [RealmCharacter] = []
     var characters: [Character] = []
     let searchBar = UISearchBar()
+    var searchButton = UIBarButtonItem()
+    var titleView = UIView()
     let tabBar = UITabBar()
     var isMoreDataLoading = false
     var loadingMoreView: InfiniteScrollActivityView?
@@ -63,11 +65,11 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         let logoView = UIImageView(frame: CGRect(x: 0, y: 0, width: 22, height: 22))
         logoView.image = logoImage
         logoView.contentMode = .scaleAspectFit
-        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 22, height: 22))
+        self.titleView = UIView(frame: CGRect(x: 0, y: 0, width: 22, height: 22))
         logoView.frame = titleView.bounds
         titleView.addSubview(logoView)
         
-        let searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action: nil)
+        self.searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action: #selector(searchIconPressed(sender:)))
         
         self.navigationItem.rightBarButtonItem = searchButton
         self.navigationItem.titleView = titleView
@@ -137,6 +139,12 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
 
 extension CharactersViewController: UISearchBarDelegate {
     
+    func searchIconPressed(sender: UIBarButtonItem) {
+        self.navigationItem.rightBarButtonItem = nil
+        self.searchBar.becomeFirstResponder()
+        self.navigationItem.titleView = self.searchBar
+    }
+    
     public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.tintColor = UIColor.gold
         searchBar.showsCancelButton = true
@@ -144,11 +152,12 @@ extension CharactersViewController: UISearchBarDelegate {
 
     }
     
-    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
         searchBar.text = ""
         searchBar.resignFirstResponder()
+        self.navigationItem.titleView = self.titleView
+        self.navigationItem.rightBarButtonItem = self.searchButton
     }
 }
 
