@@ -81,12 +81,12 @@
                                             <constraints>
                                                 <constraint firstItem="na2-td-nMA" firstAttribute="leading" secondItem="6Vi-Ox-VSp" secondAttribute="leading" constant="5" id="3CZ-Xu-dAg"/>
                                                 <constraint firstItem="5bb-sL-loP" firstAttribute="top" secondItem="jBN-zC-q01" secondAttribute="bottom" constant="9.5" id="45s-TK-fW4"/>
-                                                <constraint firstItem="na2-td-nMA" firstAttribute="top" secondItem="Lbm-Kv-0YY" secondAttribute="bottom" constant="7" id="5QZ-oH-aNz"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aKo-F8-Rhe" secondAttribute="bottom" constant="22.5" id="AKX-PY-CK5"/>
                                                 <constraint firstItem="2Tn-z0-daO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jBN-zC-q01" secondAttribute="trailing" constant="8" id="EJk-i5-67b"/>
                                                 <constraint firstItem="Lbm-Kv-0YY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FJO-nr-QQA" secondAttribute="bottom" constant="4" id="Eio-mJ-0gn"/>
+                                                <constraint firstItem="aKo-F8-Rhe" firstAttribute="top" secondItem="5bb-sL-loP" secondAttribute="bottom" constant="9" id="Evy-nR-D0z"/>
                                                 <constraint firstItem="2Tn-z0-daO" firstAttribute="top" secondItem="6Vi-Ox-VSp" secondAttribute="top" constant="17" id="Fm4-tu-a2Q"/>
                                                 <constraint firstItem="2Tn-z0-daO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aKo-F8-Rhe" secondAttribute="trailing" constant="8" id="Luf-VF-Wf4"/>
-                                                <constraint firstItem="aKo-F8-Rhe" firstAttribute="top" secondItem="5bb-sL-loP" secondAttribute="bottom" constant="9" id="Uj5-WI-9bA"/>
                                                 <constraint firstItem="2Tn-z0-daO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FJO-nr-QQA" secondAttribute="trailing" constant="8" id="WHy-Wz-YeK"/>
                                                 <constraint firstItem="Lbm-Kv-0YY" firstAttribute="leading" secondItem="6Vi-Ox-VSp" secondAttribute="leading" constant="5" id="ZEY-s5-qua"/>
                                                 <constraint firstItem="5bb-sL-loP" firstAttribute="top" secondItem="Lbm-Kv-0YY" secondAttribute="top" constant="2.5" id="bt5-9F-QmB"/>
@@ -97,8 +97,9 @@
                                                 <constraint firstItem="2Tn-z0-daO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5bb-sL-loP" secondAttribute="trailing" constant="8" id="kEB-AX-Sax"/>
                                                 <constraint firstItem="5bb-sL-loP" firstAttribute="leading" secondItem="Lbm-Kv-0YY" secondAttribute="trailing" constant="4" id="kbc-tH-qSv"/>
                                                 <constraint firstItem="jBN-zC-q01" firstAttribute="leading" secondItem="6Vi-Ox-VSp" secondAttribute="leading" constant="8" id="q0n-bA-68d"/>
-                                                <constraint firstItem="na2-td-nMA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FJO-nr-QQA" secondAttribute="bottom" constant="8" id="t7Q-pN-E8t"/>
+                                                <constraint firstItem="na2-td-nMA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FJO-nr-QQA" secondAttribute="bottom" priority="498" constant="8" id="t7Q-pN-E8t"/>
                                                 <constraint firstAttribute="trailing" secondItem="2Tn-z0-daO" secondAttribute="trailing" constant="8" id="teh-lA-GCk"/>
+                                                <constraint firstItem="na2-td-nMA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jBN-zC-q01" secondAttribute="bottom" priority="499" constant="8" id="uot-3i-dfo"/>
                                                 <constraint firstItem="FJO-nr-QQA" firstAttribute="top" secondItem="6Vi-Ox-VSp" secondAttribute="top" constant="8" id="xvU-Oz-uLU"/>
                                                 <constraint firstAttribute="bottom" secondItem="2Tn-z0-daO" secondAttribute="bottom" constant="17" id="y7c-XN-tMW"/>
                                                 <constraint firstItem="2Tn-z0-daO" firstAttribute="centerY" secondItem="6Vi-Ox-VSp" secondAttribute="centerY" id="zIm-Ae-vjv"/>
@@ -111,6 +112,7 @@
                                             <outlet property="characterHouseLabel" destination="5bb-sL-loP" id="fRu-Pl-TtA"/>
                                             <outlet property="characterImageView" destination="2Tn-z0-daO" id="ywn-UW-aH5"/>
                                             <outlet property="characterNameLabel" destination="FJO-nr-QQA" id="qfK-CS-1lI"/>
+                                            <outlet property="constraint2" destination="t7Q-pN-E8t" id="9ec-oy-L1X"/>
                                             <outlet property="mapImageView" destination="na2-td-nMA" id="Bbf-jb-Zsc"/>
                                             <segue destination="ivH-o0-tdo" kind="show" id="SN3-fV-fnx"/>
                                         </connections>
