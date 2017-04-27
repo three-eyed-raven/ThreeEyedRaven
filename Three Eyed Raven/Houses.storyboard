@@ -266,11 +266,20 @@
                         <outlet property="houseRegionLabel" destination="p5C-sO-oKA" id="OOo-rD-vSk"/>
                         <outlet property="houseWordsLabel" destination="Mor-hZ-Vnl" id="Pla-cK-SWo"/>
                         <outlet property="swornMembersCollectionView" destination="AfJ-l1-HzX" id="LQW-Z8-R6P"/>
+                        <segue destination="7J1-oh-PuF" kind="show" identifier="SwornMemberCharacterDetailSegue" id="YrO-mj-0Ug"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JuY-YB-Z3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1528.8" y="-271.21439280359823"/>
+        </scene>
+        <!--CharacterDetailViewController-->
+        <scene sceneID="Vx1-Fu-ozz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Characters" referencedIdentifier="CharacterDetailViewController" id="7J1-oh-PuF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O2n-Ac-tRG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2050" y="-272"/>
         </scene>
         <!--Houses-->
         <scene sceneID="QKT-M7-MN8">

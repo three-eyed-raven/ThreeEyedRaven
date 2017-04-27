@@ -146,18 +146,14 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
                 self.characterForSearch = character
                 group.enter()
                 GoTClient.setHouse(for: character, success: {
-                    print("1")
                     group.leave()
                 }, failure: {
-                    print("2")
                     group.leave()
                 })
                 group.enter()
                 GoTClient.getCharacterPhoto(characters: [character], success: {
-                    print("3")
                     group.leave()
                 }, failure: {
-                    print("4")
                     group.leave()
                 })
                 group.leave()
