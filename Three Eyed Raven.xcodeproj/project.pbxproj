@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11F50C2A93834B34E67788E5 /* Pods_Three_Eyed_Raven.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E120279695EE826368583267 /* Pods_Three_Eyed_Raven.framework */; };
 		2622DFCA1EAD466400D6352F /* RealmHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622DFC91EAD466400D6352F /* RealmHouse.swift */; };
 		26302C0F1E8B1F6A00AB7506 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26302C0E1E8B1F6A00AB7506 /* UIColorExtension.swift */; };
 		267B23061E91F3B3003D6786 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267B23051E91F3B3003D6786 /* Character.swift */; };
@@ -20,6 +21,7 @@
 		26E06E151EAFE04A0000C01D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E06E141EAFE04A0000C01D /* Settings.storyboard */; };
 		26E06E171EB027E50000C01D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E06E161EB027E50000C01D /* CameraViewController.swift */; };
 		26E06E191EB26A8F0000C01D /* CharacterSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E06E181EB26A8F0000C01D /* CharacterSearchCell.swift */; };
+		26E06E1B1EB285CE0000C01D /* HouseCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E06E1A1EB285CE0000C01D /* HouseCollectionCell.swift */; };
 		26EBA9011E93398B002018F4 /* GoTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EBA9001E93398B002018F4 /* GoTClient.swift */; };
 		5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2035D91E68F6530035BDF0 /* AppDelegate.swift */; };
 		5F2035DF1E68F6530035BDF0 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2035DD1E68F6530035BDF0 /* Characters.storyboard */; };
@@ -32,7 +34,6 @@
 		5FB100A21E8AFF9200EC988F /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB100A11E8AFF9200EC988F /* TabBar.storyboard */; };
 		5FCAA1271E9441FD00F60C95 /* HouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCAA1261E9441FD00F60C95 /* HouseDetailViewController.swift */; };
 		5FFB966A1E933806000AE1E5 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB96691E933806000AE1E5 /* CharacterDetailViewController.swift */; };
-		9D2F75E01720864BB15D9D11 /* Pods_Three_Eyed_Raven.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35F309208DC21EA296E2243 /* Pods_Three_Eyed_Raven.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		26E06E141EAFE04A0000C01D /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		26E06E161EB027E50000C01D /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		26E06E181EB26A8F0000C01D /* CharacterSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSearchCell.swift; sourceTree = "<group>"; };
+		26E06E1A1EB285CE0000C01D /* HouseCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseCollectionCell.swift; sourceTree = "<group>"; };
 		26EBA9001E93398B002018F4 /* GoTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoTClient.swift; sourceTree = "<group>"; };
 		5F2035D61E68F6530035BDF0 /* Three Eyed Raven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Three Eyed Raven.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2035D91E68F6530035BDF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,9 +65,9 @@
 		5FB100A11E8AFF9200EC988F /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		5FCAA1261E9441FD00F60C95 /* HouseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseDetailViewController.swift; sourceTree = "<group>"; };
 		5FFB96691E933806000AE1E5 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
-		853049AF3EB486BA6191EA1F /* Pods-Three Eyed Raven.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Three Eyed Raven.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Three Eyed Raven/Pods-Three Eyed Raven.debug.xcconfig"; sourceTree = "<group>"; };
-		B35F309208DC21EA296E2243 /* Pods_Three_Eyed_Raven.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Three_Eyed_Raven.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7E6CF86B619F53F47A6DF1A /* Pods-Three Eyed Raven.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Three Eyed Raven.release.xcconfig"; path = "Pods/Target Support Files/Pods-Three Eyed Raven/Pods-Three Eyed Raven.release.xcconfig"; sourceTree = "<group>"; };
+		DF207D1ED2C84AD8C755A9F4 /* Pods-Three Eyed Raven.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Three Eyed Raven.release.xcconfig"; path = "Target Support Files/Pods-Three Eyed Raven/Pods-Three Eyed Raven.release.xcconfig"; sourceTree = "<group>"; };
+		E120279695EE826368583267 /* Pods_Three_Eyed_Raven.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Three_Eyed_Raven.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0D3BC8E55F986CDB51146BA /* Pods-Three Eyed Raven.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Three Eyed Raven.debug.xcconfig"; path = "Target Support Files/Pods-Three Eyed Raven/Pods-Three Eyed Raven.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,30 +75,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D2F75E01720864BB15D9D11 /* Pods_Three_Eyed_Raven.framework in Frameworks */,
+				11F50C2A93834B34E67788E5 /* Pods_Three_Eyed_Raven.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		16C6708EF0D5B1DB45F1A964 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B35F309208DC21EA296E2243 /* Pods_Three_Eyed_Raven.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1F3D0C685A496AC709E57556 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				853049AF3EB486BA6191EA1F /* Pods-Three Eyed Raven.debug.xcconfig */,
-				B7E6CF86B619F53F47A6DF1A /* Pods-Three Eyed Raven.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		2622DFC81EAD464B00D6352F /* RealmModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +106,7 @@
 				5FB100961E898BFB00EC988F /* CharacterCell.swift */,
 				268956831EA30C880025CD7A /* InfiniteScrollActivityView.swift */,
 				26E06E181EB26A8F0000C01D /* CharacterSearchCell.swift */,
+				26E06E1A1EB285CE0000C01D /* HouseCollectionCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -150,13 +136,23 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		4033986A1D856A4254B11B1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F0D3BC8E55F986CDB51146BA /* Pods-Three Eyed Raven.debug.xcconfig */,
+				DF207D1ED2C84AD8C755A9F4 /* Pods-Three Eyed Raven.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5F2035CD1E68F6530035BDF0 = {
 			isa = PBXGroup;
 			children = (
 				5F2035D81E68F6530035BDF0 /* Three Eyed Raven */,
 				5F2035D71E68F6530035BDF0 /* Products */,
-				1F3D0C685A496AC709E57556 /* Pods */,
-				16C6708EF0D5B1DB45F1A964 /* Frameworks */,
+				4033986A1D856A4254B11B1B /* Pods */,
+				61EDED7D7EA5F619DBC4FE68 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +208,14 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
+		61EDED7D7EA5F619DBC4FE68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E120279695EE826368583267 /* Pods_Three_Eyed_Raven.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,12 +223,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F2035E81E68F6530035BDF0 /* Build configuration list for PBXNativeTarget "Three Eyed Raven" */;
 			buildPhases = (
-				3C6EFAF1687F70441D6EB1E9 /* [CP] Check Pods Manifest.lock */,
+				F208A7ADE44C2C8D637A14D4 /* [CP] Check Pods Manifest.lock */,
 				5F2035D21E68F6530035BDF0 /* Sources */,
 				5F2035D31E68F6530035BDF0 /* Frameworks */,
 				5F2035D41E68F6530035BDF0 /* Resources */,
-				252D5FB90A2F6ADF6730ECC2 /* [CP] Embed Pods Frameworks */,
-				909EBC623529A5C01F672D2D /* [CP] Copy Pods Resources */,
+				7E8964CD8C8B21C5BEF9C9C2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -242,7 +245,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1010;
 				TargetAttributes = {
 					5F2035D51E68F6530035BDF0 = {
 						CreatedOnToolsVersion = 8.2;
@@ -288,49 +291,60 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		252D5FB90A2F6ADF6730ECC2 /* [CP] Embed Pods Frameworks */ = {
+		7E8964CD8C8B21C5BEF9C9C2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Three Eyed Raven/Pods-Three Eyed Raven-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Three Eyed Raven/Pods-Three Eyed Raven-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Three Eyed Raven/Pods-Three Eyed Raven-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3C6EFAF1687F70441D6EB1E9 /* [CP] Check Pods Manifest.lock */ = {
+		F208A7ADE44C2C8D637A14D4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Three Eyed Raven-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		909EBC623529A5C01F672D2D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Three Eyed Raven/Pods-Three Eyed Raven-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -346,6 +360,7 @@
 				5FCAA1271E9441FD00F60C95 /* HouseDetailViewController.swift in Sources */,
 				26302C0F1E8B1F6A00AB7506 /* UIColorExtension.swift in Sources */,
 				5F2035DA1E68F6530035BDF0 /* AppDelegate.swift in Sources */,
+				26E06E1B1EB285CE0000C01D /* HouseCollectionCell.swift in Sources */,
 				267B23081E91F4AD003D6786 /* House.swift in Sources */,
 				26E06E0D1EADB24D0000C01D /* AutoCompleteTextField.swift in Sources */,
 				267B23061E91F3B3003D6786 /* Character.swift in Sources */,
@@ -391,15 +406,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -440,15 +463,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -475,7 +506,7 @@
 		};
 		5F2035E91E68F6530035BDF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 853049AF3EB486BA6191EA1F /* Pods-Three Eyed Raven.debug.xcconfig */;
+			baseConfigurationReference = F0D3BC8E55F986CDB51146BA /* Pods-Three Eyed Raven.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -490,7 +521,7 @@
 		};
 		5F2035EA1E68F6530035BDF0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7E6CF86B619F53F47A6DF1A /* Pods-Three Eyed Raven.release.xcconfig */;
+			baseConfigurationReference = DF207D1ED2C84AD8C755A9F4 /* Pods-Three Eyed Raven.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
