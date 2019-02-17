@@ -79,8 +79,8 @@ open class AutoCompleteTextField:UITextField {
     
     fileprivate func commonInit(){
         hidesWhenEmpty = true
-        autoCompleteAttributes = [NSForegroundColorAttributeName:UIColor.black]
-        autoCompleteAttributes![NSFontAttributeName] = UIFont.boldSystemFont(ofSize: 12)
+        autoCompleteAttributes = [convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor):UIColor.black]
+        autoCompleteAttributes![convertFromNSAttributedStringKey(NSAttributedString.Key.font)] = UIFont.boldSystemFont(ofSize: 12)
         self.clearButtonMode = .always
         self.addTarget(self, action: #selector(AutoCompleteTextField.textFieldDidChange), for: .editingChanged)
         self.addTarget(self, action: #selector(AutoCompleteTextField.textFieldDidEndEditing), for: .editingDidEnd)
@@ -110,7 +110,7 @@ open class AutoCompleteTextField:UITextField {
     //MARK: - Private Methods
     fileprivate func reload(){
         if enableAttributedText{
-            let attrs = [NSForegroundColorAttributeName:autoCompleteTextColor, NSFontAttributeName:autoCompleteTextFont] as [String : Any]
+            let attrs = [convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor):autoCompleteTextColor, convertFromNSAttributedStringKey(NSAttributedString.Key.font):autoCompleteTextFont] as [String : Any]
     
             if attributedAutoCompleteStrings.count > 0 {
                 attributedAutoCompleteStrings.removeAll(keepingCapacity: false)
@@ -120,8 +120,8 @@ open class AutoCompleteTextField:UITextField {
                 for i in 0..<autoCompleteStrings.count{
                     let str = autoCompleteStrings[i] as NSString
                     let range = str.range(of: text!, options: .caseInsensitive)
-                    let attString = NSMutableAttributedString(string: autoCompleteStrings[i], attributes: attrs)
-                    attString.addAttributes(autoCompleteAttributes, range: range)
+                    let attString = NSMutableAttributedString(string: autoCompleteStrings[i], attributes: convertToOptionalNSAttributedStringKeyDictionary(attrs))
+                    attString.addAttributes(convertToNSAttributedStringKeyDictionary(autoCompleteAttributes), range: range)
                     attributedAutoCompleteStrings.append(attString)
                 }
             }
@@ -129,7 +129,7 @@ open class AutoCompleteTextField:UITextField {
         autoCompleteTableView?.reloadData()
     }
     
-    func textFieldDidChange(){
+    @objc func textFieldDidChange(){
         guard let _ = text else {
             return
         }
@@ -141,7 +141,7 @@ open class AutoCompleteTextField:UITextField {
         })
     }
     
-    func textFieldDidEndEditing() {
+    @objc func textFieldDidEndEditing() {
         autoCompleteTableView?.isHidden = true
     }
 }
@@ -201,4 +201,20 @@ extension AutoCompleteTextField: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return autoCompleteCellHeight
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToNSAttributedStringKeyDictionary(_ input: [String: Any]) -> [NSAttributedString.Key: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }

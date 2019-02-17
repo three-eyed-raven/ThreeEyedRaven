@@ -26,9 +26,9 @@ PODS:
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
-  - AFNetworking (~> 3.0)
-  - Alamofire (~> 4.4)
-  - AlamofireImage (~> 3.1)
+  - AFNetworking
+  - Alamofire
+  - AlamofireImage
   - MBProgressHUD
   - RealmSwift
   - SwiftyJSON
@@ -52,6 +52,6 @@ SPEC CHECKSUMS:
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 679d43cfa9aa1dd53cc6bfbd481c578021d3a955
+PODFILE CHECKSUM: 3ebd8ab4427aac48e89def5ccde87ea56245a93c
 
 COCOAPODS: 1.6.0
