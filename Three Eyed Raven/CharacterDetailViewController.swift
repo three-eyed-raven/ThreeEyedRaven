@@ -52,7 +52,7 @@ class CharacterDetailViewController: UIViewController {
     }
     
     func getParents() {
-        print("getting parents mother: \(character?.mother) | father: \(character?.father)")
+        print("getting parents mother: \(String(describing: character?.mother)) | father: \(String(describing: character?.father))")
         GoTClient.getCharacter(fromUrlString: (character?.mother)!, success: { (character: Character) in
             self.charcterMotherLabel.text = character.name
         }) { 

@@ -9,5 +9,5 @@
 import UIKit
 
 extension UIColor {
-    static let gold = UIColor(colorLiteralRed: 199/255, green: 155/255, blue: 52/255, alpha: 1)
+    static let gold = UIColor(red: 199/255, green: 155/255, blue: 52/255, alpha: 1)
 }

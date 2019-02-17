@@ -190,7 +190,7 @@ class GoTClient: NSObject {
                 "Ocp-Apim-Subscription-Key": "e6f86299db044621b6a632f383c03624",
                 "Accept": "application/json"
             ]
-            print("Starting request for \(character.name)")
+            print("Starting request for \(String(describing: character.name))")
             Alamofire.request(photoBaseUrl, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
                 photosReceived += 1
                 photosGroup.leave()
