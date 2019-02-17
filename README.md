@@ -1,7 +1,7 @@
 # Three-Eyed Raven
 
-[![Swift 3.0.0](https://img.shields.io/badge/Swift-3.0.0-orange.svg)](https://github.com/apple/swift)
-[![CocoaPods 1.1.1](https://img.shields.io/badge/pod-1.1.1-blue.svg)](https://github.com/CocoaPods/CocoaPods)
+[![Swift 4.2.0](https://img.shields.io/badge/Swift-4.2.0-orange.svg)](https://github.com/apple/swift)
+[![CocoaPods 1.6.0](https://img.shields.io/badge/pod-1.6.0-blue.svg)](https://github.com/CocoaPods/CocoaPods)
 
 **Three-Eyed Raven** is an app that offers every detail about every Game of Thrones character, house, and event.
 
