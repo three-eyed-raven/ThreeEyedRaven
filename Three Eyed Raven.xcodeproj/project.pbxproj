@@ -142,7 +142,6 @@
 				F0D3BC8E55F986CDB51146BA /* Pods-Three Eyed Raven.debug.xcconfig */,
 				DF207D1ED2C84AD8C755A9F4 /* Pods-Three Eyed Raven.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -250,6 +249,7 @@
 					5F2035D51E68F6530035BDF0 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = KDGWDMD53Y;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -515,7 +515,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "worlds.threeeyedraven.Three-Eyed-Raven";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -530,7 +531,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "worlds.threeeyedraven.Three-Eyed-Raven";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

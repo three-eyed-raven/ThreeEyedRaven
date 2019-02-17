@@ -79,7 +79,7 @@ extension HouseDetailViewController: UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
-    func houseCollectionCellPressed(sender: UITapGestureRecognizer) {
+    @objc func houseCollectionCellPressed(sender: UITapGestureRecognizer) {
         print("tapped")
         MBProgressHUD.showAdded(to: self.view, animated: true)
         let group = DispatchGroup()

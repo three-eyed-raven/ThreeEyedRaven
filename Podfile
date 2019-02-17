@@ -6,10 +6,10 @@ target 'Three Eyed Raven' do
   use_frameworks!
 
   # Pods for Three Eyed Raven
-  pod 'AFNetworking', '~> 3.0'
+  pod 'AFNetworking'
   pod 'MBProgressHUD'
-  pod 'Alamofire', '~> 4.4'
+  pod 'Alamofire'
   pod 'SwiftyJSON'
-  pod 'AlamofireImage', '~> 3.1'
+  pod 'AlamofireImage'
   pod 'RealmSwift'
 end

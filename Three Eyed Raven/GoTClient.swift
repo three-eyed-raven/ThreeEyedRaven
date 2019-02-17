@@ -250,7 +250,7 @@ class GoTClient: NSObject {
             "Ocp-Apim-Subscription-Key": "9344a729bc8845bfb9175b49e81e9be5",
             "Content-Type": "multipart/form-data"
         ]
-        let imgData = UIImageJPEGRepresentation(image, 0.2)!
+        let imgData = image.jpegData(compressionQuality: 0.2)!
         
         let parameters = ["name": "image"]
         Alamofire.upload(multipartFormData: { multipartFormData in

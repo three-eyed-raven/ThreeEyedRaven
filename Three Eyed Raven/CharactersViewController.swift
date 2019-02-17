@@ -35,9 +35,9 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         searchTableView.delegate = self
         searchTableView.dataSource = self
         
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
-        searchTableView.rowHeight = UITableViewAutomaticDimension
+        searchTableView.rowHeight = UITableView.automaticDimension
         searchTableView.estimatedRowHeight = 200
         
         searchBar.delegate = self
@@ -74,7 +74,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         logoView.frame = titleView.bounds
         titleView.addSubview(logoView)
         
-        self.searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action: #selector(searchIconPressed(sender:)))
+        self.searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.search, target: self, action: #selector(searchIconPressed(sender:)))
         
         self.navigationItem.rightBarButtonItem = searchButton
         self.navigationItem.titleView = titleView
@@ -135,7 +135,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    func searchCellPressed(sender: UITapGestureRecognizer) {
+    @objc func searchCellPressed(sender: UITapGestureRecognizer) {
         MBProgressHUD.showAdded(to: self.searchTableView, animated: true)
         let group = DispatchGroup()
         let cell = sender.view as! CharacterSearchCell
@@ -193,7 +193,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
 
 extension CharactersViewController: UISearchBarDelegate {
     
-    func searchIconPressed(sender: UIBarButtonItem) {
+    @objc func searchIconPressed(sender: UIBarButtonItem) {
         self.navigationItem.rightBarButtonItem = nil
         self.searchBar.becomeFirstResponder()
         self.navigationItem.titleView = self.searchBar

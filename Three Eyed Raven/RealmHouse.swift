@@ -10,8 +10,8 @@ import UIKit
 import RealmSwift
 
 class RealmHouse: Object {
-    dynamic var name = ""
-    dynamic var urlString = ""
+    @objc dynamic var name = ""
+    @objc dynamic var urlString = ""
     
     override static func indexedProperties() -> [String] {
         return ["name"]

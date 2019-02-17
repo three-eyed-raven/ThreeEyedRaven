@@ -28,7 +28,7 @@ class HousesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 40
         self.tableView.alwaysBounceVertical = true
         let realm = try! Realm()
@@ -46,7 +46,7 @@ class HousesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         logoView.frame = titleView.bounds
         titleView.addSubview(logoView)
         
-        self.searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action: #selector(searchIconPressed(sender:)))
+        self.searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.search, target: self, action: #selector(searchIconPressed(sender:)))
         
         self.navigationItem.rightBarButtonItem = searchButton
         self.navigationItem.titleView = titleView
@@ -103,7 +103,7 @@ class HousesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 extension HousesViewController: UISearchBarDelegate {
     
-    func searchIconPressed(sender: UIBarButtonItem) {
+    @objc func searchIconPressed(sender: UIBarButtonItem) {
         self.navigationItem.rightBarButtonItem = nil
         self.searchBar.becomeFirstResponder()
         self.navigationItem.titleView = self.searchBar
